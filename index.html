@@ -148,7 +148,7 @@
 
         <!-- 1. Left Panel: Search, Equipment List & Compatibility Matcher -->
         <div id="left-panel"
-            class="lg:w-1/3 bg-white rounded-xl shadow-lg p-4 flex flex-col overflow-hidden border-t-4 border-slate-800">
+            class="lg:w-1/3 bg-white rounded-xl shadow-lg p-4 flex flex-col overflow-hidden border-t-4 border-[#0f172a]">
             <h2 class="text-xl font-bold mb-3 border-b pb-2 bse-text-primary uppercase tracking-tight">Equipment
                 Database</h2>
 
@@ -162,27 +162,27 @@
                 <h3 class="text-sm font-semibold mb-2 text-gray-700">Sort By:</h3>
                 <div class="flex flex-wrap gap-2">
                     <button onclick="setSort('ModelLine')"
-                        class="px-3 py-1 text-xs font-bold rounded bg-slate-700 text-white shadow hover:bg-slate-900 transition duration-150 uppercase tracking-wide">
+                        class="px-3 py-1 text-xs font-bold rounded bg-[#0f172a] text-white shadow hover:bg-slate-900 transition duration-150 uppercase tracking-wide">
                         Model Line
                     </button>
                     <button onclick="setSort('SEER2')"
-                        class="px-3 py-1 text-xs font-bold rounded bg-slate-700 text-white shadow hover:bg-slate-900 transition duration-150 uppercase tracking-wide">
+                        class="px-3 py-1 text-xs font-bold rounded bg-[#0f172a] text-white shadow hover:bg-slate-900 transition duration-150 uppercase tracking-wide">
                         SEER2 (Cooling)
                     </button>
                     <button onclick="setSort('AFUE')"
-                        class="px-3 py-1 text-xs font-bold rounded bg-slate-700 text-white shadow hover:bg-slate-900 transition duration-150 uppercase tracking-wide">
+                        class="px-3 py-1 text-xs font-bold rounded bg-[#0f172a] text-white shadow hover:bg-slate-900 transition duration-150 uppercase tracking-wide">
                         AFUE (Heating)
                     </button>
                     <button onclick="setSort('BTU')"
-                        class="px-3 py-1 text-xs font-bold rounded bg-slate-700 text-white shadow hover:bg-slate-900 transition duration-150 uppercase tracking-wide">
+                        class="px-3 py-1 text-xs font-bold rounded bg-[#0f172a] text-white shadow hover:bg-slate-900 transition duration-150 uppercase tracking-wide">
                         BTU Rating
                     </button>
                     <button onclick="setSort('Tonnage')"
-                        class="px-3 py-1 text-xs font-bold rounded bg-slate-700 text-white shadow hover:bg-slate-900 transition duration-150 uppercase tracking-wide">
+                        class="px-3 py-1 text-xs font-bold rounded bg-[#0f172a] text-white shadow hover:bg-slate-900 transition duration-150 uppercase tracking-wide">
                         Tonnage
                     </button>
                     <button onclick="setSort('Reset')"
-                        class="px-3 py-1 text-xs font-bold rounded bg-red-600 text-white shadow hover:bg-red-700 transition duration-150 uppercase tracking-wide">
+                        class="px-3 py-1 text-xs font-bold rounded bg-[#dc2626] text-white shadow hover:bg-red-700 transition duration-150 uppercase tracking-wide">
                         Reset
                     </button>
                 </div>
@@ -271,7 +271,7 @@
 
         <!-- 3. Right Panel: Detail View -->
         <div id="right-panel"
-            class="lg:w-1/3 bg-white rounded-xl shadow-lg p-6 flex flex-col overflow-hidden border-t-4 border-slate-800">
+            class="lg:w-1/3 bg-white rounded-xl shadow-lg p-6 flex flex-col overflow-hidden border-t-4 border-[#0f172a]">
             <h2 class="text-xl font-bold mb-4 border-b pb-2 bse-text-primary uppercase tracking-tight"
                 id="detail-title">Component Details
             </h2>
@@ -292,7 +292,7 @@
                     </div>
 
                     <button id="add-to-system-btn" onclick="selectComponent(window.currentEquipment.id)"
-                        class="w-full py-3 px-4 font-bold rounded shadow-md transition duration-150 transform active:scale-95 bg-red-600 text-white hover:bg-red-700 uppercase tracking-wider">
+                        class="w-full py-3 px-4 font-bold rounded shadow-md transition duration-150 transform active:scale-95 bg-[#dc2626] text-white hover:bg-red-700 uppercase tracking-wider">
                         Add to System Build
                     </button>
 
@@ -603,7 +603,7 @@
             container.innerHTML = categories.map(cat => `
                 <button onclick="setCategory('${cat}')"
                         class="px-3 py-1 text-sm font-bold rounded transition duration-150 shadow-sm uppercase tracking-wide
-                        ${currentCategory === cat ? 'bg-red-600 text-white shadow-md' : 'bg-slate-200 text-slate-700 hover:bg-slate-300'}"
+                        ${currentCategory === cat ? 'bg-[#dc2626] text-white shadow-md' : 'bg-slate-200 text-slate-700 hover:bg-slate-300'}"
                 >
                     ${cat}
                 </button>
@@ -745,11 +745,11 @@
                 let textClass = 'text-slate-500';
 
                 if (isInSystem) {
-                    highlightClass = 'bg-slate-100 text-slate-900 font-semibold border-l-4 border-slate-800';
+                    highlightClass = 'bg-slate-100 text-slate-900 font-semibold border-l-4 border-[#0f172a]';
                     textClass = 'text-slate-700';
                 }
                 if (isSelected) {
-                    highlightClass = 'bg-red-50 text-red-900 font-bold border-l-4 border-red-600 shadow-sm';
+                    highlightClass = 'bg-red-50 text-red-900 font-bold border-l-4 border-[#dc2626] shadow-sm';
                     textClass = 'text-red-800';
                 }
 
