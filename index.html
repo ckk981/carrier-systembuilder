@@ -246,6 +246,12 @@
                     <p class="italic text-gray-400">Add AC, Furnace, or Heat Pump to calculate.</p>
                 </div>
 
+                <!-- System AHRI Number Display -->
+                <div id="system-ahri-container" class="mt-3 p-2 bg-blue-50 rounded border border-blue-100 hidden">
+                    <span class="text-xs font-bold text-blue-800 uppercase tracking-wide">System AHRI Ref:</span>
+                    <span id="system-ahri-value" class="text-sm font-black text-blue-900 ml-1">--</span>
+                </div>
+
                 <button onclick="clearSystem()" id="clear-system-btn"
                     class="w-full mt-4 py-1.5 text-xs font-bold rounded bg-red-50 text-red-600 hover:bg-red-600 hover:text-white border border-red-200 transition duration-150 uppercase"
                     style="display:none;">
@@ -302,6 +308,13 @@
                             class="text-sm text-gray-700 space-y-2 bg-gray-50 p-4 rounded-lg border border-gray-100">
                             <!-- Specs will be populated here -->
                         </ul>
+
+                        <!-- AHRI Ref for Individual Item -->
+                        <div id="item-ahri-container" class="mt-3 hidden">
+                            <span class="text-xs font-bold text-slate-500 uppercase tracking-wide">AHRI Reference
+                                #:</span>
+                            <span id="item-ahri-value" class="text-sm font-bold text-slate-900 ml-1"></span>
+                        </div>
                     </div>
 
                     <div class="mt-4 text-center">
@@ -380,7 +393,8 @@
                 rating: 'Up to 21 SEER2, Variable-Speed', tier: 3, size: 'N/A', type: 'Outdoor', btu: 36000,
                 specLink: 'https://www.carrier.com/residential/en/us/products/air-conditioners/26vna1/',
                 compatibleWith: ['59MN7', 'FE5B', 'SYSTXCCITC01-C', '27VNA1', '27VNA3', '27VNA0', 'DGAPA', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP'],
-                img: 'images/26VNA1.jpg'
+                img: 'images/26VNA1.jpg',
+                ahriRef: '215705518' // Example AHRI
             },
             {
                 id: '26TPA8', category: 'Outdoor Unit', name: 'Performance 2-Stage Air Conditioner',
@@ -412,7 +426,8 @@
                 id: '59MN7', category: 'Indoor Unit', name: 'Infinity 98 Gas Furnace w/ Greenspeed',
                 rating: 'Up to 98.5% AFUE, Modulating', tier: 3, size: 'N/A', type: 'Indoor', btu: 120000,
                 compatibleWith: ['26VNA1', '27VNA1', '27VNA3', '27VNA0', 'FE5B', 'SYSTXCCITC01-C', 'DGAPA', 'UVCAP', 'EZXCAB', 'FNCCAB', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP'],
-                img: 'images/59MN7.jpg'
+                img: 'images/59MN7.jpg',
+                ahriRef: '202350119' // Example AHRI
             },
             { id: '59TN6', category: 'Indoor Unit', name: 'Infinity 96 Gas Furnace', rating: 'Up to 96.7% AFUE, 2-Stage', tier: 3, size: 'N/A', type: 'Indoor', btu: 100000, specLink: 'https://www.carrier.com/residential/en/us/products/furnaces/59tn6/', compatibleWith: ['26VNA1', '27VNA3', '27VNA0', 'FE5B', 'SYSTXCCITC01-C', 'DGAPA', 'UVCAP', 'EZXCAB', 'FNCCAB', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP'], img: 'images/59TN6.jpg' },
             {
@@ -595,6 +610,25 @@
                 img: 'images/50NP.jpg'
             },
         ];
+
+        // --- AHRI System Logic ---
+        const systemAhriMap = {
+            // OutdoorID + IndoorID : AHRI Number
+            '26VNA1+59MN7': '205123456', // Example System Match
+            // Add more combinations here as needed
+        };
+
+        function getSystemAhri(components) {
+            // Find Outdoor and Indoor units
+            const outdoor = components.find(c => c.category === 'Outdoor Unit');
+            const indoor = components.find(c => c.category === 'Indoor Unit');
+
+            if (outdoor && indoor) {
+                const key = `${outdoor.id}+${indoor.id}`;
+                return systemAhriMap[key] || null;
+            }
+            return null;
+        }
 
         // --- Core Application Logic ---
 
@@ -851,7 +885,10 @@
         window.clearSystem = function () {
             currentSystem = [];
             window.currentEquipment = null;
-            renderSystem();
+            // Hide AHRI container
+            document.getElementById('item-ahri-container').classList.add('hidden');
+
+            // Show Details Panel
             document.getElementById('initial-message').classList.remove('hidden');
             document.getElementById('item-details').classList.add('hidden');
             document.getElementById('detail-title').textContent = 'Component Details';
@@ -897,6 +934,17 @@
             let combinedText = '';
             if (avgSeer) {
                 combinedText += `Cooling Avg: <span class="font-bold text-bse-blue">${avgSeer} SEER2</span>`;
+                // Update System AHRI
+                const systemAhri = getSystemAhri(systemComponents);
+                const systemAhriContainer = document.getElementById('system-ahri-container');
+                const systemAhriValue = document.getElementById('system-ahri-value');
+
+                if (systemAhri) {
+                    systemAhriValue.textContent = systemAhri;
+                    systemAhriContainer.classList.remove('hidden');
+                } else {
+                    systemAhriContainer.classList.add('hidden');
+                }
             }
             if (avgSeer && avgAfue) {
                 combinedText += ' • ';
@@ -974,6 +1022,16 @@
 
             document.getElementById('detail-title').textContent = `${window.currentEquipment.id}`;
             document.getElementById('item-image').src = window.currentEquipment.img;
+
+            // Show AHRI if available
+            const ahriContainer = document.getElementById('item-ahri-container');
+            const ahriValue = document.getElementById('item-ahri-value');
+            if (window.currentEquipment.ahriRef) {
+                ahriValue.textContent = window.currentEquipment.ahriRef;
+                ahriContainer.classList.remove('hidden');
+            } else {
+                ahriContainer.classList.add('hidden');
+            }
 
             const addBtn = document.getElementById('add-to-system-btn');
             const isInSystem = currentSystem.includes(window.currentEquipment.id);
