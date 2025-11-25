@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,32 +10,73 @@
     <!-- Load Inter Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
     <style>
+        /* Import Roboto and Open Sans */
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700;900&display=swap');
+
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f7f9fb;
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f1f5f9;
+            /* Slate 100 */
+            color: #334155;
+            /* Slate 700 */
         }
-        /* Custom scrollbar for better look */
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        /* Custom scrollbar */
         .equipment-list::-webkit-scrollbar {
             width: 8px;
         }
+
         .equipment-list::-webkit-scrollbar-thumb {
-            background: #cbd5e1;
+            background: #94a3b8;
             border-radius: 4px;
         }
+
         .equipment-list::-webkit-scrollbar-thumb:hover {
-            background: #94a3b8;
+            background: #64748b;
         }
-        /* Carrier Brand Color: A deep blue/cyan */
-        .carrier-blue {
-            background-color: #004d80;
+
+        /* BSE Brand Colors */
+        /* Primary: Dark Slate (Industrial) */
+        .bse-primary {
+            background-color: #0f172a;
+            /* Slate 900 */
         }
-        .carrier-text-blue {
-            color: #004d80;
+
+        .bse-text-primary {
+            color: #0f172a;
         }
-        .focus-ring-carrier-blue:focus {
+
+        /* Accent: Red (Heating/Action) */
+        .bse-accent {
+            background-color: #dc2626;
+            /* Red 600 */
+        }
+
+        .bse-text-accent {
+            color: #dc2626;
+        }
+
+        /* Secondary Accent: Blue (Cooling) */
+        .bse-blue {
+            color: #0284c7;
+            /* Sky 600 */
+        }
+
+        .focus-ring-bse:focus {
             --tw-ring-opacity: 1;
-            --tw-ring-color: rgba(0, 77, 128, var(--tw-ring-opacity));
+            --tw-ring-color: rgba(220, 38, 38, var(--tw-ring-opacity));
+            /* Red Ring */
         }
+
         .unique-filter-active {
             opacity: 0.5;
             pointer-events: none;
@@ -47,72 +89,103 @@
                 height: auto;
                 overflow: visible;
             }
-            header, #left-panel, #right-panel, #clear-system-btn {
+
+            header,
+            #left-panel,
+            #right-panel,
+            #clear-system-btn {
                 display: none !important;
             }
+
             #app {
                 display: block;
                 height: auto;
                 padding: 0;
             }
+
             #center-panel {
                 width: 100%;
                 box-shadow: none;
                 border: none;
             }
+
             #system-components {
                 display: grid;
-                grid-template-columns: 1fr 1fr; /* 2 items per row on print */
+                grid-template-columns: 1fr 1fr;
+                /* 2 items per row on print */
                 gap: 1rem;
             }
+
             .print-header {
                 display: block !important;
                 margin-bottom: 20px;
                 text-align: center;
                 font-size: 24px;
                 font-weight: bold;
-                color: #004d80;
+                color: #0f172a;
             }
         }
     </style>
 </head>
+
 <body class="min-h-screen flex flex-col">
 
-    <header class="carrier-blue text-white shadow-lg p-4 sticky top-0 z-10">
-        <h1 class="text-2xl font-bold text-center">Carrier HVAC System Builder</h1>
-        <p class="text-sm text-center opacity-80">Tech Equipment Lookup & Pairing Tool</p>
+    <header class="bse-primary text-white shadow-lg p-4 sticky top-0 z-10 border-b-4 border-red-600">
+        <div class="flex items-center justify-center space-x-3">
+            <!-- Placeholder Icon for BSE -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-red-500" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+            </svg>
+            <div>
+                <h1 class="text-2xl font-black tracking-tight uppercase">BSE Mechanical <span
+                        class="text-red-500">LLC</span></h1>
+                <p class="text-xs font-medium text-gray-400 tracking-wider uppercase">System Builder & Quote Tool</p>
+            </div>
+        </div>
     </header>
 
-    <main id="app" class="flex flex-1 flex-col lg:flex-row p-4 space-y-4 lg:space-y-0 lg:space-x-4 overflow-hidden h-[calc(100vh-80px)]">
-        
+    <main id="app"
+        class="flex flex-1 flex-col lg:flex-row p-4 space-y-4 lg:space-y-0 lg:space-x-4 overflow-hidden h-[calc(100vh-80px)]">
+
         <!-- 1. Left Panel: Search, Equipment List & Compatibility Matcher -->
-        <div id="left-panel" class="lg:w-1/3 bg-white rounded-xl shadow-lg p-4 flex flex-col overflow-hidden">
-            <h2 class="text-xl font-semibold mb-3 border-b pb-2 carrier-text-blue">Equipment Database</h2>
+        <div id="left-panel"
+            class="lg:w-1/3 bg-white rounded-xl shadow-lg p-4 flex flex-col overflow-hidden border-t-4 border-slate-800">
+            <h2 class="text-xl font-bold mb-3 border-b pb-2 bse-text-primary uppercase tracking-tight">Equipment
+                Database</h2>
 
             <!-- Search Input -->
-            <input type="text" id="search-input" oninput="filterEquipment()" placeholder="Search by Model #, Name, or Category..."
-                   class="p-3 border border-gray-300 rounded-lg mb-4 focus:ring-2 focus-ring-carrier-blue outline-none transition duration-150">
+            <input type="text" id="search-input" oninput="filterEquipment()"
+                placeholder="Search by Model #, Name, or Category..."
+                class="p-3 border border-gray-300 rounded-lg mb-4 focus:ring-2 focus-ring-bse outline-none transition duration-150 bg-slate-50">
 
             <!-- Sorting Buttons -->
             <div class="mb-4 p-3 border rounded-lg bg-gray-50">
                 <h3 class="text-sm font-semibold mb-2 text-gray-700">Sort By:</h3>
                 <div class="flex flex-wrap gap-2">
-                    <button onclick="setSort('ModelLine')" class="px-3 py-1 text-xs font-medium rounded-full bg-blue-500 text-white shadow-md hover:bg-blue-600 transition duration-150">
+                    <button onclick="setSort('ModelLine')"
+                        class="px-3 py-1 text-xs font-bold rounded bg-slate-700 text-white shadow hover:bg-slate-900 transition duration-150 uppercase tracking-wide">
                         Model Line
                     </button>
-                    <button onclick="setSort('SEER2')" class="px-3 py-1 text-xs font-medium rounded-full bg-blue-500 text-white shadow-md hover:bg-blue-600 transition duration-150">
+                    <button onclick="setSort('SEER2')"
+                        class="px-3 py-1 text-xs font-bold rounded bg-slate-700 text-white shadow hover:bg-slate-900 transition duration-150 uppercase tracking-wide">
                         SEER2 (Cooling)
                     </button>
-                    <button onclick="setSort('AFUE')" class="px-3 py-1 text-xs font-medium rounded-full bg-blue-500 text-white shadow-md hover:bg-blue-600 transition duration-150">
+                    <button onclick="setSort('AFUE')"
+                        class="px-3 py-1 text-xs font-bold rounded bg-slate-700 text-white shadow hover:bg-slate-900 transition duration-150 uppercase tracking-wide">
                         AFUE (Heating)
                     </button>
-                    <button onclick="setSort('BTU')" class="px-3 py-1 text-xs font-medium rounded-full bg-blue-500 text-white shadow-md hover:bg-blue-600 transition duration-150">
+                    <button onclick="setSort('BTU')"
+                        class="px-3 py-1 text-xs font-bold rounded bg-slate-700 text-white shadow hover:bg-slate-900 transition duration-150 uppercase tracking-wide">
                         BTU Rating
                     </button>
-                    <button onclick="setSort('Tonnage')" class="px-3 py-1 text-xs font-medium rounded-full bg-blue-500 text-white shadow-md hover:bg-blue-600 transition duration-150">
+                    <button onclick="setSort('Tonnage')"
+                        class="px-3 py-1 text-xs font-bold rounded bg-slate-700 text-white shadow hover:bg-slate-900 transition duration-150 uppercase tracking-wide">
                         Tonnage
                     </button>
-                    <button onclick="setSort('Reset')" class="px-3 py-1 text-xs font-medium rounded-full bg-gray-600 text-white shadow-md hover:bg-gray-700 transition duration-150">
+                    <button onclick="setSort('Reset')"
+                        class="px-3 py-1 text-xs font-bold rounded bg-red-600 text-white shadow hover:bg-red-700 transition duration-150 uppercase tracking-wide">
                         Reset
                     </button>
                 </div>
@@ -127,11 +200,18 @@
             <div id="equipment-list" class="equipment-list flex-1 overflow-y-auto space-y-2 pr-2 mb-4 border-b pb-4">
                 <!-- Equipment items will be rendered here -->
             </div>
-            
-             <!-- Compatibility Matcher (Left Bottom) -->
-             <div class="mt-auto flex-none bg-yellow-50 p-3 rounded-lg border border-yellow-200">
-                <h3 class="text-sm font-bold mb-2 text-yellow-800 uppercase tracking-wide">Recommended Additions</h3>
-                <p class="text-gray-600 mb-2 text-xs italic" id="compatibility-message">Select a unit to see suggestions.</p>
+
+            <!-- Compatibility Matcher (Left Bottom) -->
+            <div class="mt-auto flex-none bg-orange-50 p-3 rounded-lg border border-orange-200">
+                <h3 class="text-sm font-black mb-2 text-orange-800 uppercase tracking-wide flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                    Recommended Additions
+                </h3>
+                <p class="text-gray-600 mb-2 text-xs italic" id="compatibility-message">Select a unit to see
+                    suggestions.</p>
 
                 <div id="compatible-list" class="space-y-2 equipment-list max-h-40 overflow-y-auto pr-1">
                     <!-- Compatible items will be rendered here -->
@@ -140,32 +220,38 @@
         </div>
 
         <!-- 2. Center Panel: Current System Build (Visual) -->
-        <div id="center-panel" class="lg:w-1/3 bg-indigo-50 rounded-xl shadow-lg p-6 flex flex-col border border-indigo-100">
+        <div id="center-panel"
+            class="lg:w-1/3 bg-slate-100 rounded-xl shadow-lg p-6 flex flex-col border border-slate-200">
             <!-- Hidden Print Header -->
             <div class="print-header hidden">Carrier HVAC System Configuration</div>
 
-            <div class="flex justify-between items-center mb-4 border-b border-indigo-200 pb-2">
-                <h2 class="text-xl font-bold text-indigo-900">Current System Build</h2>
-                <button onclick="window.print()" class="text-indigo-600 hover:text-indigo-800 text-sm font-semibold flex items-center gap-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+            <div class="flex justify-between items-center mb-4 border-b border-slate-300 pb-2">
+                <h2 class="text-xl font-bold text-slate-800">Current System Build</h2>
+                <button onclick="window.print()"
+                    class="text-slate-600 hover:text-slate-900 text-sm font-bold flex items-center gap-1 uppercase tracking-wide">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
                     </svg>
                     Print
                 </button>
             </div>
 
             <!-- System Specs Header -->
-            <div class="p-4 mb-4 bg-white rounded-lg shadow-md border border-indigo-200 flex-none">
-                <div class="flex justify-between items-end mb-3 border-b border-gray-100 pb-2">
-                    <span class="text-xs font-bold text-indigo-500 uppercase tracking-wider">Combined Performance</span>
-                    <span class="text-sm font-black text-indigo-800" id="component-count-display">Empty System</span>
+            <div class="p-4 mb-4 bg-white rounded-lg shadow-sm border border-slate-200 flex-none">
+                <div class="flex justify-between items-end mb-3 border-b border-slate-100 pb-2">
+                    <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Combined Performance</span>
+                    <span class="text-sm font-black text-slate-900" id="component-count-display">Empty System</span>
                 </div>
                 <!-- Combined Rating Display -->
                 <div id="combined-rating" class="text-sm text-gray-700 space-y-1">
                     <p class="italic text-gray-400">Add AC, Furnace, or Heat Pump to calculate.</p>
                 </div>
-                
-                <button onclick="clearSystem()" id="clear-system-btn" class="w-full mt-4 py-1.5 text-xs font-bold rounded bg-red-50 text-red-600 hover:bg-red-100 border border-red-200 transition duration-150" style="display:none;">
+
+                <button onclick="clearSystem()" id="clear-system-btn"
+                    class="w-full mt-4 py-1.5 text-xs font-bold rounded bg-red-50 text-red-600 hover:bg-red-600 hover:text-white border border-red-200 transition duration-150 uppercase"
+                    style="display:none;">
                     Clear Entire Build
                 </button>
             </div>
@@ -174,8 +260,10 @@
             <div id="current-system-panel" class="flex-1 overflow-y-auto space-y-3 pr-2">
                 <div id="system-components" class="space-y-3">
                     <!-- Visual Cards will be injected here -->
-                    <div class="flex flex-col items-center justify-center h-64 text-indigo-300 border-2 border-dashed border-indigo-200 rounded-lg">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <div
+                        class="flex flex-col items-center justify-center h-64 text-slate-400 border-2 border-dashed border-slate-300 rounded-lg bg-slate-50">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mb-2" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                         </svg>
                         <span class="text-sm font-medium">Add components from the left</span>
@@ -183,41 +271,50 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- 3. Right Panel: Detail View -->
-        <div id="right-panel" class="lg:w-1/3 bg-white rounded-xl shadow-lg p-6 flex flex-col overflow-hidden">
-             <h2 class="text-xl font-semibold mb-4 border-b pb-2 carrier-text-blue" id="detail-title">Component Details</h2>
+        <div id="right-panel"
+            class="lg:w-1/3 bg-white rounded-xl shadow-lg p-6 flex flex-col overflow-hidden border-t-4 border-slate-800">
+            <h2 class="text-xl font-bold mb-4 border-b pb-2 bse-text-primary uppercase tracking-tight"
+                id="detail-title">Component Details
+            </h2>
 
             <div id="detail-view" class="space-y-6 flex-1 overflow-y-auto">
                 <!-- Initial Placeholder State -->
                 <div id="initial-message" class="text-center text-gray-500 p-10 mt-10">
                     <p class="text-lg font-medium text-gray-400">Select an item to view details</p>
                 </div>
-                
+
                 <!-- Detailed Item View (Hidden initially) -->
                 <div id="item-details" class="hidden">
-                    
+
                     <!-- Image container -->
                     <div class="bg-gray-100 rounded-lg p-4 mb-4 flex items-center justify-center">
-                        <img id="item-image" src="" alt="Equipment Model Image" class="max-h-64 object-contain drop-shadow-md">
+                        <img id="item-image" src="" alt="Equipment Model Image"
+                            class="max-h-64 object-contain drop-shadow-md">
                     </div>
-                    
-                    <button id="add-to-system-btn" onclick="selectComponent(window.currentEquipment.id)" class="w-full py-3 px-4 font-bold rounded-lg shadow-md transition duration-150 transform active:scale-95">
+
+                    <button id="add-to-system-btn" onclick="selectComponent(window.currentEquipment.id)"
+                        class="w-full py-3 px-4 font-bold rounded shadow-md transition duration-150 transform active:scale-95 bg-red-600 text-white hover:bg-red-700 uppercase tracking-wider">
                         Add to System Build
                     </button>
 
                     <div class="mt-6">
                         <h3 class="text-sm font-bold text-gray-900 uppercase tracking-wider mb-3">Specifications</h3>
-                        <ul id="item-specs" class="text-sm text-gray-700 space-y-2 bg-gray-50 p-4 rounded-lg border border-gray-100">
+                        <ul id="item-specs"
+                            class="text-sm text-gray-700 space-y-2 bg-gray-50 p-4 rounded-lg border border-gray-100">
                             <!-- Specs will be populated here -->
                         </ul>
                     </div>
-                    
+
                     <div class="mt-4 text-center">
-                        <a id="spec-sheet-link" href="#" target="_blank" class="text-sm font-semibold text-blue-600 hover:text-blue-800 hover:underline inline-flex items-center">
+                        <a id="spec-sheet-link" href="#" target="_blank"
+                            class="text-sm font-bold text-slate-600 hover:text-red-600 hover:underline inline-flex items-center uppercase tracking-wide">
                             View Full Spec Sheet
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                             </svg>
                         </a>
                     </div>
@@ -240,14 +337,14 @@
 
         let db, auth, userId = null;
         let isAuthReady = false;
-        
+
         // --- GLOBAL STATE VARIABLES ---
         let currentCategory = 'All';
         let currentSort = 'Reset';
         let currentSearch = '';
-        let currentSystem = []; 
-        window.currentEquipment = null; 
-        
+        let currentSystem = [];
+        window.currentEquipment = null;
+
         // Unified Categories for simpler UI
         const UNIQUE_CATEGORIES = ['Outdoor Unit', 'Indoor Unit', 'Evaporator Coil', 'Packaged Unit', 'Ductless'];
         const categories = ['All', 'Outdoor Unit', 'Indoor Unit', 'Evaporator Coil', 'Ductless', 'Packaged Unit', 'Control', 'Air Quality'];
@@ -255,17 +352,18 @@
         // --- SVG ASSETS (Replacing Broken URLs) ---
         // Using encodeURIComponent to handle SVG data properly in data URIs
         const svgs = {
-            outdoor: "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%23eef2ff' stroke='%23004d80' stroke-width='2'%3E%3Crect x='15' y='15' width='70' height='70' rx='4' fill='white'/%3E%3Ccircle cx='50' cy='50' r='25' fill='%23e0f2fe'/%3E%3Cpath d='M50 25 L50 75 M25 50 L75 50' stroke='%23004d80' stroke-width='2'/%3E%3Cpath d='M15 25 H85 M15 35 H85 M15 45 H85 M15 55 H85 M15 65 H85' stroke='%23cbd5e1' stroke-width='1' opacity='0.5'/%3E%3C/svg%3E",
-            furnace: "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%23f8fafc' stroke='%23004d80' stroke-width='2'%3E%3Crect x='25' y='10' width='50' height='80' rx='2' fill='white'/%3E%3Cline x1='30' y1='20' x2='70' y2='20' stroke='%2394a3b8' stroke-width='2'/%3E%3Cline x1='30' y1='25' x2='70' y2='25' stroke='%2394a3b8' stroke-width='2'/%3E%3Crect x='35' y='60' width='30' height='20' fill='%23e2e8f0' stroke='none'/%3E%3Ccircle cx='50' cy='70' r='5' fill='%23004d80'/%3E%3C/svg%3E",
-            fancoil: "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%23f8fafc' stroke='%23004d80' stroke-width='2'%3E%3Crect x='25' y='10' width='50' height='80' rx='2' fill='white'/%3E%3Cline x1='25' y1='40' x2='75' y2='40' stroke='%23004d80' stroke-width='1'/%3E%3Cpath d='M35 20 L50 30 L65 20' fill='none' stroke='%230ea5e9' stroke-width='2'/%3E%3C/svg%3E",
-            coil: "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%23f0f9ff' stroke='%23004d80' stroke-width='2'%3E%3Crect x='20' y='60' width='60' height='20' fill='white'/%3E%3Cpath d='M25 60 L50 20 L75 60' fill='%23e0f2fe' stroke='%23004d80' stroke-width='2'/%3E%3Cline x1='35' y1='60' x2='40' y2='50' stroke='%2394a3b8'/%3E%3Cline x1='65' y1='60' x2='60' y2='50' stroke='%2394a3b8'/%3E%3C/svg%3E",
+            outdoor: "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%23f1f5f9' stroke='%230f172a' stroke-width='2'%3E%3Crect x='15' y='15' width='70' height='70' rx='4' fill='white'/%3E%3Ccircle cx='50' cy='50' r='25' fill='%23e2e8f0'/%3E%3Cpath d='M50 25 L50 75 M25 50 L75 50' stroke='%230f172a' stroke-width='2'/%3E%3Cpath d='M15 25 H85 M15 35 H85 M15 45 H85 M15 55 H85 M15 65 H85' stroke='%2394a3b8' stroke-width='1' opacity='0.5'/%3E%3C/svg%3E",
+            furnace: "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%23f1f5f9' stroke='%230f172a' stroke-width='2'%3E%3Crect x='25' y='10' width='50' height='80' rx='2' fill='white'/%3E%3Cline x1='30' y1='20' x2='70' y2='20' stroke='%2394a3b8' stroke-width='2'/%3E%3Cline x1='30' y1='25' x2='70' y2='25' stroke='%2394a3b8' stroke-width='2'/%3E%3Crect x='35' y='60' width='30' height='20' fill='%23cbd5e1' stroke='none'/%3E%3Ccircle cx='50' cy='70' r='5' fill='%23dc2626'/%3E%3C/svg%3E",
+            fancoil: "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%23f1f5f9' stroke='%230f172a' stroke-width='2'%3E%3Crect x='25' y='10' width='50' height='80' rx='2' fill='white'/%3E%3Cline x1='25' y1='40' x2='75' y2='40' stroke='%230f172a' stroke-width='1'/%3E%3Cpath d='M35 20 L50 30 L65 20' fill='none' stroke='%230284c7' stroke-width='2'/%3E%3C/svg%3E",
+            coil: "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%23f1f5f9' stroke='%230f172a' stroke-width='2'%3E%3Crect x='20' y='60' width='60' height='20' fill='white'/%3E%3Cpath d='M25 60 L50 20 L75 60' fill='%23e2e8f0' stroke='%230f172a' stroke-width='2'/%3E%3Cline x1='35' y1='60' x2='40' y2='50' stroke='%2394a3b8'/%3E%3Cline x1='65' y1='60' x2='60' y2='50' stroke='%2394a3b8'/%3E%3C/svg%3E",
             control: "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%231e293b' stroke='none'%3E%3Crect x='15' y='25' width='70' height='50' rx='4' fill='%230f172a'/%3E%3Crect x='20' y='30' width='60' height='40' rx='2' fill='%23000000'/%3E%3Ctext x='50' y='55' font-family='sans-serif' font-size='16' text-anchor='middle' fill='%2338bdf8' font-weight='bold'%3E72%C2%B0%3C/text%3E%3C/svg%3E",
-            iaq: "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%23f1f5f9' stroke='%23004d80' stroke-width='2'%3E%3Crect x='10' y='30' width='80' height='40' rx='2' fill='white'/%3E%3Cpath d='M15 30 L25 70 M30 30 L40 70 M45 30 L55 70 M60 30 L70 70 M75 30 L85 70' stroke='%2394a3b8' stroke-width='1'/%3E%3C/svg%3E",
-            ductless: "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='white' stroke='%23004d80' stroke-width='2'%3E%3Crect x='10' y='35' width='80' height='30' rx='4' fill='%23f8fafc'/%3E%3Cline x1='15' y1='55' x2='85' y2='55' stroke='%23cbd5e1' stroke-width='1'/%3E%3Crect x='70' y='40' width='10' height='10' fill='%23e2e8f0' stroke='none'/%3E%3C/svg%3E",
-            packaged: "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%23e2e8f0' stroke='%23004d80' stroke-width='2'%3E%3Crect x='10' y='25' width='80' height='50' fill='%23cbd5e1'/%3E%3Ccircle cx='30' cy='50' r='15' fill='%2394a3b8'/%3E%3Crect x='55' y='30' width='30' height='40' fill='%2364748b'/%3E%3C/svg%3E"
+            iaq: "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%23f1f5f9' stroke='%230f172a' stroke-width='2'%3E%3Crect x='10' y='30' width='80' height='40' rx='2' fill='white'/%3E%3Cpath d='M15 30 L25 70 M30 30 L40 70 M45 30 L55 70 M60 30 L70 70 M75 30 L85 70' stroke='%2394a3b8' stroke-width='1'/%3E%3C/svg%3E",
+            ductless: "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='white' stroke='%230f172a' stroke-width='2'%3E%3Crect x='10' y='35' width='80' height='30' rx='4' fill='%23f8fafc'/%3E%3Cline x1='15' y1='55' x2='85' y2='55' stroke='%23cbd5e1' stroke-width='1'/%3E%3Crect x='70' y='40' width='10' height='10' fill='%23e2e8f0' stroke='none'/%3E%3C/svg%3E",
+            packaged: "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%23e2e8f0' stroke='%230f172a' stroke-width='2'%3E%3Crect x='10' y='25' width='80' height='50' fill='%23cbd5e1'/%3E%3Ccircle cx='30' cy='50' r='15' fill='%2394a3b8'/%3E%3Crect x='55' y='30' width='30' height='40' fill='%2364748b'/%3E%3C/svg%3E"
         };
 
         function getIconForCategory(cat, name) {
+            // This function is now primarily a fallback for when a specific image isn't defined or fails to load
             if (cat === 'Outdoor Unit') return svgs.outdoor;
             if (cat === 'Indoor Unit') return name.toLowerCase().includes('fan coil') ? svgs.fancoil : svgs.furnace;
             if (cat === 'Evaporator Coil') return svgs.coil;
@@ -280,139 +378,139 @@
         // Data structure
         const equipmentData = [
             // --- REAL CARRIER AIR CONDITIONER UNITS (Outdoor Unit) ---
-            { 
-                id: '26VNA1', category: 'Outdoor Unit', name: 'Infinity Variable-Speed AC w/ Greenspeed', 
-                rating: 'Up to 21 SEER2, Variable-Speed', tier: 3, size: 'N/A', type: 'Outdoor', btu: 36000, 
-                specLink: 'https://www.carrier.com/residential/en/us/products/air-conditioners/26vna1/', 
-                compatibleWith: ['59MN7', 'FE5B', 'SYSTXCCITC01-C', '27VNA1', '27VNA3', '27VNA0', 'DGAPA', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP'], 
-                img: getIconForCategory('Outdoor Unit', '') 
+            {
+                id: '26VNA1', category: 'Outdoor Unit', name: 'Infinity Variable-Speed AC w/ Greenspeed',
+                rating: 'Up to 21 SEER2, Variable-Speed', tier: 3, size: 'N/A', type: 'Outdoor', btu: 36000,
+                specLink: 'https://www.carrier.com/residential/en/us/products/air-conditioners/26vna1/',
+                compatibleWith: ['59MN7', 'FE5B', 'SYSTXCCITC01-C', '27VNA1', '27VNA3', '27VNA0', 'DGAPA', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP'],
+                img: 'images/26VNA1.jpg'
             },
-            { 
-                id: '26TPA8', category: 'Outdoor Unit', name: 'Performance 2-Stage Air Conditioner', 
-                rating: 'Up to 18 SEER2, 2-Stage', tier: 2, size: 'N/A', type: 'Outdoor', btu: 36000, 
-                specLink: 'https://www.carrier.com/residential/en/us/products/air-conditioners/26tpa8/', 
-                compatibleWith: ['59TP6', 'FT5', 'CVAMA', 'EB-STATE6ICR-01', 'TSTATCCEWF-01', '27TPA8', '27SPA6', '37MUHA', '33NM3', 'UVCAP', 'EZXCAB', 'FNCCAB', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP', '48NG', '48VR', '50VG', '50VR'], 
-                img: getIconForCategory('Outdoor Unit', '') 
+            {
+                id: '26TPA8', category: 'Outdoor Unit', name: 'Performance 2-Stage Air Conditioner',
+                rating: 'Up to 18 SEER2, 2-Stage', tier: 2, size: 'N/A', type: 'Outdoor', btu: 36000,
+                specLink: 'https://www.carrier.com/residential/en/us/products/air-conditioners/26tpa8/',
+                compatibleWith: ['59TP6', 'FT5', 'CVAMA', 'EB-STATE6ICR-01', 'TSTATCCEWF-01', '27TPA8', '27SPA6', '37MUHA', '33NM3', 'UVCAP', 'EZXCAB', 'FNCCAB', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP', '48NG', '48VR', '50VG', '50VR'],
+                img: 'images/26TPA8.jpg'
             },
-            { 
-                id: '26SPA6', category: 'Outdoor Unit', name: 'Performance AC w/ InteliSense Technology', 
-                rating: 'Up to 16.5 SEER2, Single-Stage', tier: 2, size: 'N/A', type: 'Outdoor', btu: 30000, 
-                specLink: 'https://www.carrier.com/residential/en/us/products/air-conditioners/26spa6/', 
-                compatibleWith: ['59TP6', 'FT5', 'CVAMA', 'EB-STATE6ICR-01', 'TSTATCCEWF-01', '27TPA8', '27SPA6', '37MUHA', '33NM3', 'UVCAP', 'EZXCAB', 'FNCCAB', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP', '48NG', '48VR', '50VG', '50VR'], 
-                img: getIconForCategory('Outdoor Unit', '') 
+            {
+                id: '26SPA6', category: 'Outdoor Unit', name: 'Performance AC w/ InteliSense Technology',
+                rating: 'Up to 16.5 SEER2, Single-Stage', tier: 2, size: 'N/A', type: 'Outdoor', btu: 30000,
+                specLink: 'https://www.carrier.com/residential/en/us/products/air-conditioners/26spa6/',
+                compatibleWith: ['59TP6', 'FT5', 'CVAMA', 'EB-STATE6ICR-01', 'TSTATCCEWF-01', '27TPA8', '27SPA6', '37MUHA', '33NM3', 'UVCAP', 'EZXCAB', 'FNCCAB', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP', '48NG', '48VR', '50VG', '50VR'],
+                img: getIconForCategory('Outdoor Unit', '')
             },
-            { 
-                id: '26SCA4', category: 'Outdoor Unit', name: 'Comfort Central Air Conditioner', 
-                rating: 'Up to 16 SEER2, Single-Stage', tier: 1, size: 'N/A', type: 'Outdoor', btu: 30000, 
-                specLink: 'https://www.carrier.com/residential/en/us/products/air-conditioners/26sca4/', 
-                compatibleWith: ['58DLA', 'FJ5', 'CVAVA', 'TSTATCCEWF-01', '27SCA5', 'EZXCAB', 'FNCCAB', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP', '48NL', '50NP', '48NT', '50ZH'], 
-                img: getIconForCategory('Outdoor Unit', '') 
+            {
+                id: '26SCA4', category: 'Outdoor Unit', name: 'Comfort Central Air Conditioner',
+                rating: 'Up to 16 SEER2, Single-Stage', tier: 1, size: 'N/A', type: 'Outdoor', btu: 30000,
+                specLink: 'https://www.carrier.com/residential/en/us/products/air-conditioners/26sca4/',
+                compatibleWith: ['58DLA', 'FJ5', 'CVAVA', 'TSTATCCEWF-01', '27SCA5', 'EZXCAB', 'FNCCAB', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP', '48NL', '50NP', '48NT', '50ZH'],
+                img: 'images/26SCA4.jpg'
             },
             { id: '26TPA8***C', category: 'Outdoor Unit', name: 'Performance 2-Stage Coastal AC', rating: 'Up to 18 SEER2, 2-Stage, Coastal', tier: 2, size: 'N/A', type: 'Outdoor', btu: 36000, specLink: 'https://www.carrier.com/residential/en/us/products/air-conditioners/26tpa8---c/', compatibleWith: ['59TP6', 'FT5', 'CVAMA', 'EB-STATE6ICR-01', 'TSTATCCEWF-01', '27TPA8', '27SPA6', 'UVCAP', 'EZXCAB', 'FNCCAB', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP'], img: getIconForCategory('Outdoor Unit', '') },
-            { id: '26SCA5', category: 'Outdoor Unit', name: 'Comfort Air Conditioner', rating: 'Up to 16.5 SEER2, Single-Stage', tier: 1, size: 'N/A', type: 'Outdoor', btu: 30000, specLink: 'https://www.carrier.com/residential/en/us/products/air-conditioners/26sca5/', compatibleWith: ['58DLA', 'FJ5', 'CVAVA', 'TSTATCCEWF-01', '27SCA5', 'EZXCAB', 'FNCCAB', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP'], img: getIconForCategory('Outdoor Unit', '') },
+            { id: '26SCA5', category: 'Outdoor Unit', name: 'Comfort Air Conditioner', rating: 'Up to 16.5 SEER2, Single-Stage', tier: 1, size: 'N/A', type: 'Outdoor', btu: 30000, specLink: 'https://www.carrier.com/residential/en/us/products/air-conditioners/26sca5/', compatibleWith: ['58DLA', 'FJ5', 'CVAVA', 'TSTATCCEWF-01', '27SCA5', 'EZXCAB', 'FNCCAB', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP'], img: 'images/26SCA5.jpg' },
             { id: '26SCA5***C', category: 'Outdoor Unit', name: 'Comfort Coastal AC', rating: 'Up to 16.5 SEER2, Single-Stage, Coastal', tier: 1, size: 'N/A', type: 'Outdoor', btu: 30000, specLink: 'https://www.carrier.com/residential/en/us/products/air-conditioners/26sca5---c/', compatibleWith: ['58DLA', 'FJ5', 'CVAVA', 'TSTATCCEWF-01', '27SCA5', 'EZXCAB', 'FNCCAB', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP'], img: getIconForCategory('Outdoor Unit', '') },
 
             // --- REAL CARRIER FURNACE UNITS (Indoor Unit) ---
-            { 
-                id: '59MN7', category: 'Indoor Unit', name: 'Infinity 98 Gas Furnace w/ Greenspeed', 
-                rating: 'Up to 98.5% AFUE, Modulating', tier: 3, size: 'N/A', type: 'Indoor', btu: 120000, 
-                compatibleWith: ['26VNA1', '27VNA1', '27VNA3', '27VNA0', 'FE5B', 'SYSTXCCITC01-C', 'DGAPA', 'UVCAP', 'EZXCAB', 'FNCCAB', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP'], 
-                img: getIconForCategory('Indoor Unit', 'furnace') 
+            {
+                id: '59MN7', category: 'Indoor Unit', name: 'Infinity 98 Gas Furnace w/ Greenspeed',
+                rating: 'Up to 98.5% AFUE, Modulating', tier: 3, size: 'N/A', type: 'Indoor', btu: 120000,
+                compatibleWith: ['26VNA1', '27VNA1', '27VNA3', '27VNA0', 'FE5B', 'SYSTXCCITC01-C', 'DGAPA', 'UVCAP', 'EZXCAB', 'FNCCAB', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP'],
+                img: 'images/59MN7.jpg'
             },
-            { id: '59TN6', category: 'Indoor Unit', name: 'Infinity 96 Gas Furnace', rating: 'Up to 96.7% AFUE, 2-Stage', tier: 3, size: 'N/A', type: 'Indoor', btu: 100000, specLink: 'https://www.carrier.com/residential/en/us/products/furnaces/59tn6/', compatibleWith: ['26VNA1', '27VNA3', '27VNA0', 'FE5B', 'SYSTXCCITC01-C', 'DGAPA', 'UVCAP', 'EZXCAB', 'FNCCAB', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP'], img: getIconForCategory('Indoor Unit', 'furnace') },
-            { 
-                id: '59TP6', category: 'Indoor Unit', name: 'Performance 96 Gas Furnace w/ InteliSense', 
+            { id: '59TN6', category: 'Indoor Unit', name: 'Infinity 96 Gas Furnace', rating: 'Up to 96.7% AFUE, 2-Stage', tier: 3, size: 'N/A', type: 'Indoor', btu: 100000, specLink: 'https://www.carrier.com/residential/en/us/products/furnaces/59tn6/', compatibleWith: ['26VNA1', '27VNA3', '27VNA0', 'FE5B', 'SYSTXCCITC01-C', 'DGAPA', 'UVCAP', 'EZXCAB', 'FNCCAB', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP'], img: 'images/59TN6.jpg' },
+            {
+                id: '59TP6', category: 'Indoor Unit', name: 'Performance 96 Gas Furnace w/ InteliSense',
                 rating: 'Up to 96.7% AFUE, 2-Stage', tier: 2, size: 'N/A', type: 'Indoor', btu: 80000,
-                compatibleWith: ['26TPA8', '26SPA6', '26TPA8***C', '27TPA8', '27SPA6', '37MUHA', 'FT5', 'CVAMA', 'EB-STATE6ICR-01', 'TSTATCCEWF-01', 'DGAPA', 'UVCAP', 'EZXCAB', 'FNCCAB', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP'], 
-                img: getIconForCategory('Indoor Unit', 'furnace') 
+                compatibleWith: ['26TPA8', '26SPA6', '26TPA8***C', '27TPA8', '27SPA6', '37MUHA', 'FT5', 'CVAMA', 'EB-STATE6ICR-01', 'TSTATCCEWF-01', 'DGAPA', 'UVCAP', 'EZXCAB', 'FNCCAB', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP'],
+                img: 'images/59TP6.jpg'
             },
-            { id: '58TP0', category: 'Indoor Unit', name: 'Performance 80 Gas Furnace w/ InteliSense', rating: '80% AFUE, 2-Stage', tier: 2, size: 'N/A', type: 'Indoor', btu: 60000, specLink: 'https://www.carrier.com/residential/en/us/products/furnaces/58tp0/', compatibleWith: ['26TPA8', '26SPA6', '26TPA8***C', '27TPA8', '27SPA6', '37MUHA', 'FT5', 'CVAMA', 'EB-STATE6ICR-01', 'TSTATCCEWF-01', 'DGAPA', 'UVCAP', 'EZXCAB', 'FNCCAB', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP'], img: getIconForCategory('Indoor Unit', 'furnace') },
-            { 
-                id: '58DLA', category: 'Indoor Unit', name: 'Comfort 92 Gas Furnace', 
+            { id: '58TP0', category: 'Indoor Unit', name: 'Performance 80 Gas Furnace w/ InteliSense', rating: '80% AFUE, 2-Stage', tier: 2, size: 'N/A', type: 'Indoor', btu: 60000, specLink: 'https://www.carrier.com/residential/en/us/products/furnaces/58tp0/', compatibleWith: ['26TPA8', '26SPA6', '26TPA8***C', '27TPA8', '27SPA6', '37MUHA', 'FT5', 'CVAMA', 'EB-STATE6ICR-01', 'TSTATCCEWF-01', 'DGAPA', 'UVCAP', 'EZXCAB', 'FNCCAB', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP'], img: 'images/58TP0.jpg' },
+            {
+                id: '58DLA', category: 'Indoor Unit', name: 'Comfort 92 Gas Furnace',
                 rating: 'Up to 92% AFUE, Single-Stage', tier: 1, size: 'N/A', type: 'Indoor', btu: 60000,
-                compatibleWith: ['26SCA4', '26SCA5', '26SCA5***C', '27SCA5', '27SCA5***C', 'FJ5', 'CVAVA', 'TSTATCCEWF-01', 'DGAPA', 'UVCAP', 'EZXCAB', 'FNCCAB', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP'], 
-                img: getIconForCategory('Indoor Unit', 'furnace') 
+                compatibleWith: ['26SCA4', '26SCA5', '26SCA5***C', '27SCA5', '27SCA5***C', 'FJ5', 'CVAVA', 'TSTATCCEWF-01', 'DGAPA', 'UVCAP', 'EZXCAB', 'FNCCAB', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP'],
+                img: 'images/58DLA.jpg'
             },
             { id: '58SCA', category: 'Indoor Unit', name: 'Comfort 80 Gas Furnace', rating: '80% AFUE, Single-Stage', tier: 1, size: 'N/A', type: 'Indoor', btu: 40000, specLink: 'https://example.com/58sca_specs.pdf', compatibleWith: ['26SCA4', '26SCA5', '26SCA5***C', '27SCA5', '27SCA5***C', 'FJ5', 'CVAVA', 'TSTATCCEWF-01', 'DGAPA', 'UVCAP', 'EZXCAB', 'FNCCAB', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP'], img: getIconForCategory('Indoor Unit', 'furnace') },
 
             // --- REAL CARRIER HEAT PUMP UNITS (Outdoor Unit) ---
-            { id: '27VNA3', category: 'Outdoor Unit', name: 'Infinity Variable-Speed HP w/ Greenspeed', rating: 'Up to 23 SEER2 / 10.5 HSPF', tier: 3, size: 'N/A', type: 'Outdoor', btu: 36000, specLink: 'https://www.carrier.com/residential/en/us/products/heat-pumps/27vna3/', compatibleWith: ['59MN7', '59TN6', 'FE5B', 'SYSTXCCITC01-C', 'DGAPA', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP'], img: getIconForCategory('Outdoor Unit', '')},
-            { id: '27VNA1', category: 'Outdoor Unit', name: 'Infinity Cold Climate HP w/ Greenspeed', rating: 'Up to 21.2 SEER2 / 12.5 HSPF', tier: 3, size: 'N/A', type: 'Outdoor', btu: 30000, specLink: 'https://www.carrier.com/residential/en/us/products/heat-pumps/27vna1/', compatibleWith: ['59MN7', '59TN6', 'FE5B', 'SYSTXCCITC01-C', 'DGAPA', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP'], img: getIconForCategory('Outdoor Unit', '')},
-            { id: '27TPA8', category: 'Outdoor Unit', name: 'Performance 2-Stage Heat Pump w/ InteliSense', rating: 'Up to 18.5 SEER2 / 8.5 HSPF', tier: 2, size: 'N/A', type: 'Outdoor', btu: 36000, specLink: 'https://www.carrier.com/residential/en/us/products/heat-pumps/27tpa8/', compatibleWith: ['59TP6', '58TP0', 'FT5', 'CVAMA', 'EB-STATE6ICR-01', 'TSTATCCEWF-01', 'UVCAP', 'EZXCAB', 'FNCCAB', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP', '48VR', '48NR', '50VR', '50NR', '48NT', '50ZH', '50NH'], img: getIconForCategory('Outdoor Unit', '')},
-            { id: '27SPA6', category: 'Outdoor Unit', name: 'Performance Heat Pump w/ InteliSense', rating: 'Up to 16.5 SEER2 / 8.1 HSPF', tier: 2, size: 'N/A', type: 'Outdoor', btu: 30000, specLink: 'https://www.carrier.com/residential/en/us/products/heat-pumps/27spa6/', compatibleWith: ['59TP6', '58TP0', 'FT5', 'CVAMA', 'EB-STATE6ICR-01', 'TSTATCCEWF-01', 'UVCAP', 'EZXCAB', 'FNCCAB', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP', '48VR', '48NR', '50VR', '50NR', '48NT', '50ZH', '50NH'], img: getIconForCategory('Outdoor Unit', '')},
-            { id: '27SCA5', category: 'Outdoor Unit', name: 'Comfort Heat Pump', rating: 'Up to 16 SEER2 / 8.1 HSPF', tier: 1, size: 'N/A', type: 'Outdoor', btu: 24000, specLink: 'https://www.carrier.com/residential/en/us/products/heat-pumps/27sca5/', compatibleWith: ['58DLA', '58SCA', 'FJ5', 'CVAVA', 'TSTATCCEWF-01', 'EZXCAB', 'FNCCAB', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP', '48NT', '50ZH', '50NH'], img: getIconForCategory('Outdoor Unit', '')},
-            { id: '37MUHA', category: 'Outdoor Unit', name: 'Performance Crossover Heat Pump', rating: 'Up to 19 SEER2 / 10.8 HSPF, Variable-Speed', tier: 2, size: 'N/A', type: 'Outdoor', btu: 30000, specLink: 'https://www.carrier.com/residential/en/us/products/crossover-solutions/37muha/', compatibleWith: ['59TP6', '58TP0', 'FT5', 'CVAMA', 'EB-STATE6ICR-01', 'TSTATCCEWF-01', 'UVCAP', 'EZXCAB', 'FNCCAB', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP'], img: getIconForCategory('Outdoor Unit', '')},
-            { id: '27VNA0', category: 'Outdoor Unit', name: 'Infinity Variable-Speed HP', rating: 'Up to 20 SEER2 / 9.5 HSPF', tier: 3, size: 'N/A', type: 'Outdoor', btu: 30000, specLink: 'https://www.carrier.com/residential/en/us/products/heat-pumps/27vna0/', compatibleWith: ['59MN7', '59TN6', 'FE5B', 'SYSTXCCITC01-C', 'DGAPA', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP'], img: getIconForCategory('Outdoor Unit', '')},
-            { id: '27TPA8***C', category: 'Outdoor Unit', name: 'Performance 2-Stage Coastal HP', rating: 'Up to 18.5 SEER2 / 8.5 HSPF, Coastal', tier: 2, size: 'N/A', type: 'Outdoor', btu: 36000, specLink: 'https://www.carrier.com/residential/en/us/products/heat-pumps/27tpa8--c/', compatibleWith: ['59TP6', '58TP0', 'FT5', 'CVAMA', 'EB-STATE6ICR-01', 'TSTATCCEWF-01', 'UVCAP', 'EZXCAB', 'FNCCAB', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP'], img: getIconForCategory('Outdoor Unit', '')},
-            { id: '27SCA5***C', category: 'Outdoor Unit', name: 'Comfort Coastal Heat Pump', rating: 'Up to 16 SEER2 / 8.1 HSPF, Coastal', tier: 1, size: 'N/A', type: 'Outdoor', btu: 24000, specLink: 'https://www.carrier.com/residential/en/us/products/heat-pumps/27sca5---c/', compatibleWith: ['58DLA', '58SCA', 'FJ5', 'CVAVA', 'TSTATCCEWF-01', 'EZXCAB', 'FNCCAB', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP'], img: getIconForCategory('Outdoor Unit', '')},
-            { id: '33NM3', category: 'Outdoor Unit', name: 'Domestic Hot Water Air-To-Water HP', rating: 'Up to 8.5 EER2', tier: 2, size: 'N/A', type: 'Accessory', btu: 0, specLink: 'https://www.carrier.com/residential/en/us/products/heat-pumps/33nm3/', compatibleWith: ['26TPA8', '26SPA6', '27TPA8', '27SPA6'], img: getIconForCategory('Outdoor Unit', '')},
+            { id: '27VNA3', category: 'Outdoor Unit', name: 'Infinity Variable-Speed HP w/ Greenspeed', rating: 'Up to 23 SEER2 / 10.5 HSPF', tier: 3, size: 'N/A', type: 'Outdoor', btu: 36000, specLink: 'https://www.carrier.com/residential/en/us/products/heat-pumps/27vna3/', compatibleWith: ['59MN7', '59TN6', 'FE5B', 'SYSTXCCITC01-C', 'DGAPA', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP'], img: 'images/27VNA3.jpg' },
+            { id: '27VNA1', category: 'Outdoor Unit', name: 'Infinity Cold Climate HP w/ Greenspeed', rating: 'Up to 21.2 SEER2 / 12.5 HSPF', tier: 3, size: 'N/A', type: 'Outdoor', btu: 30000, specLink: 'https://www.carrier.com/residential/en/us/products/heat-pumps/27vna1/', compatibleWith: ['59MN7', '59TN6', 'FE5B', 'SYSTXCCITC01-C', 'DGAPA', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP'], img: 'images/27VNA1.jpg' },
+            { id: '27TPA8', category: 'Outdoor Unit', name: 'Performance 2-Stage Heat Pump w/ InteliSense', rating: 'Up to 18.5 SEER2 / 8.5 HSPF', tier: 2, size: 'N/A', type: 'Outdoor', btu: 36000, specLink: 'https://www.carrier.com/residential/en/us/products/heat-pumps/27tpa8/', compatibleWith: ['59TP6', '58TP0', 'FT5', 'CVAMA', 'EB-STATE6ICR-01', 'TSTATCCEWF-01', 'UVCAP', 'EZXCAB', 'FNCCAB', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP', '48VR', '48NR', '50VR', '50NR', '48NT', '50ZH', '50NH'], img: 'images/27TPA8.jpg' },
+            { id: '27SPA6', category: 'Outdoor Unit', name: 'Performance Heat Pump w/ InteliSense', rating: 'Up to 16.5 SEER2 / 8.1 HSPF', tier: 2, size: 'N/A', type: 'Outdoor', btu: 30000, specLink: 'https://www.carrier.com/residential/en/us/products/heat-pumps/27spa6/', compatibleWith: ['59TP6', '58TP0', 'FT5', 'CVAMA', 'EB-STATE6ICR-01', 'TSTATCCEWF-01', 'UVCAP', 'EZXCAB', 'FNCCAB', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP', '48VR', '48NR', '50VR', '50NR', '48NT', '50ZH', '50NH'], img: 'images/27SPA6.jpg' },
+            { id: '27SCA5', category: 'Outdoor Unit', name: 'Comfort Heat Pump', rating: 'Up to 16 SEER2 / 8.1 HSPF', tier: 1, size: 'N/A', type: 'Outdoor', btu: 24000, specLink: 'https://www.carrier.com/residential/en/us/products/heat-pumps/27sca5/', compatibleWith: ['58DLA', '58SCA', 'FJ5', 'CVAVA', 'TSTATCCEWF-01', 'EZXCAB', 'FNCCAB', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP', '48NT', '50ZH', '50NH'], img: 'images/27SCA5.jpg' },
+            { id: '37MUHA', category: 'Outdoor Unit', name: 'Performance Crossover Heat Pump', rating: 'Up to 19 SEER2 / 10.8 HSPF, Variable-Speed', tier: 2, size: 'N/A', type: 'Outdoor', btu: 30000, specLink: 'https://www.carrier.com/residential/en/us/products/crossover-solutions/37muha/', compatibleWith: ['59TP6', '58TP0', 'FT5', 'CVAMA', 'EB-STATE6ICR-01', 'TSTATCCEWF-01', 'UVCAP', 'EZXCAB', 'FNCCAB', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP'], img: getIconForCategory('Outdoor Unit', '') },
+            { id: '27VNA0', category: 'Outdoor Unit', name: 'Infinity Variable-Speed HP', rating: 'Up to 20 SEER2 / 9.5 HSPF', tier: 3, size: 'N/A', type: 'Outdoor', btu: 30000, specLink: 'https://www.carrier.com/residential/en/us/products/heat-pumps/27vna0/', compatibleWith: ['59MN7', '59TN6', 'FE5B', 'SYSTXCCITC01-C', 'DGAPA', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP'], img: 'images/27VNA0.jpg' },
+            { id: '27TPA8***C', category: 'Outdoor Unit', name: 'Performance 2-Stage Coastal HP', rating: 'Up to 18.5 SEER2 / 8.5 HSPF, Coastal', tier: 2, size: 'N/A', type: 'Outdoor', btu: 36000, specLink: 'https://www.carrier.com/residential/en/us/products/heat-pumps/27tpa8--c/', compatibleWith: ['59TP6', '58TP0', 'FT5', 'CVAMA', 'EB-STATE6ICR-01', 'TSTATCCEWF-01', 'UVCAP', 'EZXCAB', 'FNCCAB', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP'], img: getIconForCategory('Outdoor Unit', '') },
+            { id: '27SCA5***C', category: 'Outdoor Unit', name: 'Comfort Coastal Heat Pump', rating: 'Up to 16 SEER2 / 8.1 HSPF, Coastal', tier: 1, size: 'N/A', type: 'Outdoor', btu: 24000, specLink: 'https://www.carrier.com/residential/en/us/products/heat-pumps/27sca5---c/', compatibleWith: ['58DLA', '58SCA', 'FJ5', 'CVAVA', 'TSTATCCEWF-01', 'EZXCAB', 'FNCCAB', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP'], img: getIconForCategory('Outdoor Unit', '') },
+            { id: '33NM3', category: 'Outdoor Unit', name: 'Domestic Hot Water Air-To-Water HP', rating: 'Up to 8.5 EER2', tier: 2, size: 'N/A', type: 'Accessory', btu: 0, specLink: 'https://www.carrier.com/residential/en/us/products/heat-pumps/33nm3/', compatibleWith: ['26TPA8', '26SPA6', '27TPA8', '27SPA6'], img: getIconForCategory('Outdoor Unit', '') },
 
             // --- REAL CARRIER FAN COIL / AIR HANDLER UNITS (Indoor Unit) ---
-            { 
-                id: 'FE5B', category: 'Indoor Unit', name: 'Infinity Variable-Speed Fan Coil', 
+            {
+                id: 'FE5B', category: 'Indoor Unit', name: 'Infinity Variable-Speed Fan Coil',
                 rating: 'Variable-Speed ECM (Infinity)', tier: 3, size: 'N/A', type: 'Indoor', btu: 48000,
-                compatibleWith: ['26VNA1', '27VNA3', '27VNA1', '27VNA0', '59MN7', '59TN6', 'SYSTXCCITC01-C', 'DGAPA', 'UVCAP', 'EZXCAB', 'FNCCAB', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP'], 
-                img: getIconForCategory('Indoor Unit', 'fan coil') 
+                compatibleWith: ['26VNA1', '27VNA3', '27VNA1', '27VNA0', '59MN7', '59TN6', 'SYSTXCCITC01-C', 'DGAPA', 'UVCAP', 'EZXCAB', 'FNCCAB', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP'],
+                img: 'images/FE5B.jpg'
             },
-            { 
-                id: 'FT5', category: 'Indoor Unit', name: 'Performance Fan Coil w/ InteliSense', 
+            {
+                id: 'FT5', category: 'Indoor Unit', name: 'Performance Fan Coil w/ InteliSense',
                 rating: 'Variable-Speed ECM (Performance)', tier: 2, size: 'N/A', type: 'Indoor', btu: 42000,
-                specLink: 'https://www.carrier.com/residential/en/us/products/fan-coils/ft5/', 
-                compatibleWith: ['26TPA8', '26SPA6', '27TPA8', '27SPA6', '37MUHA', '59TP6', '58TP0', 'EB-STATE6ICR-01', 'TSTATCCEWF-01', 'DGAPA', 'UVCAP', 'EZXCAB', 'FNCCAB', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP'], 
-                img: getIconForCategory('Indoor Unit', 'fan coil') 
+                specLink: 'https://www.carrier.com/residential/en/us/products/fan-coils/ft5/',
+                compatibleWith: ['26TPA8', '26SPA6', '27TPA8', '27SPA6', '37MUHA', '59TP6', '58TP0', 'EB-STATE6ICR-01', 'TSTATCCEWF-01', 'DGAPA', 'UVCAP', 'EZXCAB', 'FNCCAB', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP'],
+                img: 'images/FT5.jpg'
             },
-            { 
-                id: 'FJ5', category: 'Indoor Unit', name: 'Comfort Fan Coil', 
+            {
+                id: 'FJ5', category: 'Indoor Unit', name: 'Comfort Fan Coil',
                 rating: 'Multi 5-speed ECM (Comfort)', tier: 1, size: 'N/A', type: 'Indoor', btu: 36000,
-                specLink: 'https://www.carrier.com/residential/en/us/products/fan-coils/fj5/', 
-                compatibleWith: ['26SCA4', '26SCA5', '27SCA5', '58DLA', '58SCA', 'TSTATCCEWF-01', 'DGAPA', 'UVCAP', 'EZXCAB', 'FNCCAB', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP'], 
-                img: getIconForCategory('Indoor Unit', 'fan coil') 
+                specLink: 'https://www.carrier.com/residential/en/us/products/fan-coils/fj5/',
+                compatibleWith: ['26SCA4', '26SCA5', '27SCA5', '58DLA', '58SCA', 'TSTATCCEWF-01', 'DGAPA', 'UVCAP', 'EZXCAB', 'FNCCAB', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP'],
+                img: 'images/FJ5.jpg'
             },
 
             // --- REAL CARRIER EVAPORATOR COIL UNITS (Indoor Component) ---
-            { 
-                id: 'CVAMA', category: 'Evaporator Coil', name: 'Multipoise Cased V Coil w/ Vertex', 
+            {
+                id: 'CVAMA', category: 'Evaporator Coil', name: 'Multipoise Cased V Coil w/ Vertex',
                 rating: 'All-Aluminum, Multipoise (Performance)', tier: 2, size: 'N/A', type: 'Component', btu: 36000,
-                specLink: 'https://www.carrier.com/residential/en/us/products/evaporator-coils/cvama/', 
+                specLink: 'https://www.carrier.com/residential/en/us/products/evaporator-coils/cvama/',
                 compatibleWith: ['59TP6', '58TP0', '58DLA', '58SCA', 'DGAPA', 'UVCAP', 'EZXCAB', 'FNCCAB', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP'], // Used with Furnaces
-                img: getIconForCategory('Evaporator Coil', '') 
+                img: getIconForCategory('Evaporator Coil', '')
             },
-            { 
-                id: 'CVAVA', category: 'Evaporator Coil', name: 'Cased V Evaporator Coil w/ Vertex', 
+            {
+                id: 'CVAVA', category: 'Evaporator Coil', name: 'Cased V Evaporator Coil w/ Vertex',
                 rating: 'All-Aluminum, Upflow/Downflow (Comfort)', tier: 1, size: 'N/A', type: 'Component', btu: 30000,
-                specLink: 'https://www.carrier.com/residential/en/us/products/evaporator-coils/cvava/', 
+                specLink: 'https://www.carrier.com/residential/en/us/products/evaporator-coils/cvava/',
                 compatibleWith: ['58DLA', '58SCA', '26SCA4', '26SCA5', '27SCA5', 'DGAPA', 'UVCAP', 'EZXCAB', 'FNCCAB', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP'], // Used with Comfort Furnaces
-                img: getIconForCategory('Evaporator Coil', '') 
+                img: getIconForCategory('Evaporator Coil', '')
             },
-            
+
             // --- REAL CARRIER SMART CONTROL & ZONING UNITS ---
-            { 
-                id: 'SYSTXCCITC01-C', category: 'Control', name: 'Infinity Wi-Fi Touch Control (Black)', 
+            {
+                id: 'SYSTXCCITC01-C', category: 'Control', name: 'Infinity Wi-Fi Touch Control (Black)',
                 rating: 'Communicating System Control', tier: 3, size: 'N/A', type: 'Accessory', btu: 0,
-                specLink: 'https://www.carrier.com/residential/en/us/products/thermostats/smart-thermostats/systxccitc01-c/', 
-                compatibleWith: ['26VNA1', '27VNA3', '27VNA1', '27VNA0', '59MN7', '59TN6', 'FE5B', 'SYSTXCC4ZC01', 'SYSTXZNSMS01', '37MPRA', '37MAHA', '37MGHA', '45MPHA', '48VL'], 
-                img: getIconForCategory('Control', '') 
+                specLink: 'https://www.carrier.com/residential/en/us/products/thermostats/smart-thermostats/systxccitc01-c/',
+                compatibleWith: ['26VNA1', '27VNA3', '27VNA1', '27VNA0', '59MN7', '59TN6', 'FE5B', 'SYSTXCC4ZC01', 'SYSTXZNSMS01', '37MPRA', '37MAHA', '37MGHA', '45MPHA', '48VL'],
+                img: 'images/SYSTXCCITC01-C.jpg'
             },
-             { 
-                id: 'SYSTXCCWIC01-C', category: 'Control', name: 'Infinity Wi-Fi Touch Control (White)', 
+            {
+                id: 'SYSTXCCWIC01-C', category: 'Control', name: 'Infinity Wi-Fi Touch Control (White)',
                 rating: 'Communicating System Control', tier: 3, size: 'N/A', type: 'Accessory', btu: 0,
-                specLink: 'https://www.carrier.com/residential/en/us/products/thermostats/smart-thermostats/systxccwic01-c/', 
-                compatibleWith: ['26VNA1', '27VNA3', '27VNA1', '27VNA0', '59MN7', '59TN6', 'FE5B', 'SYSTXCC4ZC01', 'SYSTXZNSMS01', '37MPRA', '37MAHA', '37MGHA', '45MPHA', '48VL'], 
-                img: getIconForCategory('Control', '') 
+                specLink: 'https://www.carrier.com/residential/en/us/products/thermostats/smart-thermostats/systxccwic01-c/',
+                compatibleWith: ['26VNA1', '27VNA3', '27VNA1', '27VNA0', '59MN7', '59TN6', 'FE5B', 'SYSTXCC4ZC01', 'SYSTXZNSMS01', '37MPRA', '37MAHA', '37MGHA', '45MPHA', '48VL'],
+                img: 'images/SYSTXCCWIC01-C.jpg'
             },
-            { 
-                id: 'EB-STATE6ICR-01', category: 'Control', name: 'ecobee for Carrier Smart Thermostat Premium', 
+            {
+                id: 'EB-STATE6ICR-01', category: 'Control', name: 'ecobee for Carrier Smart Thermostat Premium',
                 rating: 'Wi-Fi Smart Control (Performance)', tier: 2, size: 'N/A', type: 'Accessory', btu: 0,
-                specLink: 'https://www.carrier.com/residential/en/us/products/thermostats/smart-thermostats/eb-state6icr-01/', 
-                compatibleWith: ['26TPA8', '26SPA6', '26SCA4', '26SCA5', '27TPA8', '27SPA6', '27SCA5', '59TP6', '58TP0', '58DLA', '58SCA', 'FT5', 'FJ5', '37MARA', '37MGRA', '45MAHA', '48NG', '48VR', '50VG', '50VR'], 
-                img: getIconForCategory('Control', '') 
+                specLink: 'https://www.carrier.com/residential/en/us/products/thermostats/smart-thermostats/eb-state6icr-01/',
+                compatibleWith: ['26TPA8', '26SPA6', '26SCA4', '26SCA5', '27TPA8', '27SPA6', '27SCA5', '59TP6', '58TP0', '58DLA', '58SCA', 'FT5', 'FJ5', '37MARA', '37MGRA', '45MAHA', '48NG', '48VR', '50VG', '50VR'],
+                img: 'images/EB-STATE6ICR-01.jpg'
             },
-            { 
-                id: 'TSTATCCEWF-01', category: 'Control', name: 'Carrier Smart Thermostat', 
+            {
+                id: 'TSTATCCEWF-01', category: 'Control', name: 'Carrier Smart Thermostat',
                 rating: 'Affordable Wi-Fi Smart Control (Comfort)', tier: 1, size: 'N/A', type: 'Accessory', btu: 0,
-                specLink: 'https://www.carrier.com/residential/en/us/products/thermostats/smart-thermostats/tstatccewf-01/', 
-                compatibleWith: ['26TPA8', '26SPA6', '26SCA4', '26SCA5', '27TPA8', '27SPA6', '27SCA5', '59TP6', '58TP0', '58DLA', '58SCA', 'FT5', 'FJ5', '37MARA', '37MGRA', '45MAHA', '38MAQC', '40MAQC', '48NL', '50NP', '48NT', '50ZH'], 
-                img: getIconForCategory('Control', '') 
+                specLink: 'https://www.carrier.com/residential/en/us/products/thermostats/smart-thermostats/tstatccewf-01/',
+                compatibleWith: ['26TPA8', '26SPA6', '26SCA4', '26SCA5', '27TPA8', '27SPA6', '27SCA5', '59TP6', '58TP0', '58DLA', '58SCA', 'FT5', 'FJ5', '37MARA', '37MGRA', '45MAHA', '38MAQC', '40MAQC', '48NL', '50NP', '48NT', '50ZH'],
+                img: 'images/TSTATCCEWF-01.jpg'
             },
             {
                 id: 'SYSTXCC4ZC01', category: 'Control', name: 'Infinity Zoning Panel',
@@ -428,76 +526,76 @@
                 compatibleWith: ['SYSTXCCITC01-C', 'SYSTXCCWIC01-C', 'SYSTXCC4ZC01'],
                 img: getIconForCategory('Control', '')
             },
-            
+
             // --- REAL CARRIER AIR QUALITY UNITS ---
-            { 
-                id: 'DGAPA', category: 'Air Quality', name: 'Infinity Air Purifier w/ Captures & Kills', 
+            {
+                id: 'DGAPA', category: 'Air Quality', name: 'Infinity Air Purifier w/ Captures & Kills',
                 rating: 'MERV 15, Captures & Kills Technology', tier: 3, size: 'N/A', type: 'Accessory', btu: 0,
-                specLink: 'https://www.carrier.com/residential/en/us/products/indoor-air-quality/air-purifiers/air-purifier-dgapa/', 
-                compatibleWith: ['26VNA1', '27VNA3', '27VNA1', '27VNA0', '59MN7', '59TN6', 'FE5B', 'SYSTXCCITC01-C', 'SYSTXCCWIC01-C', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP'], 
-                img: getIconForCategory('Air Quality', '') 
+                specLink: 'https://www.carrier.com/residential/en/us/products/indoor-air-quality/air-purifiers/air-purifier-dgapa/',
+                compatibleWith: ['26VNA1', '27VNA3', '27VNA1', '27VNA0', '59MN7', '59TN6', 'FE5B', 'SYSTXCCITC01-C', 'SYSTXCCWIC01-C', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP'],
+                img: 'images/DGAPA.jpg'
             },
-            { 
-                id: 'UVCAP', category: 'Air Quality', name: 'Performance Carbon Air Purifier w/ UV', 
+            {
+                id: 'UVCAP', category: 'Air Quality', name: 'Performance Carbon Air Purifier w/ UV',
                 rating: 'UV Light + Carbon Filtration', tier: 2, size: 'N/A', type: 'Accessory', btu: 0,
-                specLink: 'https://www.carrier.com/residential/en/us/products/indoor-air-quality/air-purifiers/carbon-air-purifier-uvcap/', 
-                compatibleWith: ['26TPA8', '26SPA6', '27TPA8', '27SPA6', '59TP6', '58TP0', 'FT5', 'CVAMA', 'CVAVA', 'EB-STATE6ICR-01', 'TSTATCCEWF-01', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP'], 
-                img: getIconForCategory('Air Quality', '') 
+                specLink: 'https://www.carrier.com/residential/en/us/products/indoor-air-quality/air-purifiers/carbon-air-purifier-uvcap/',
+                compatibleWith: ['26TPA8', '26SPA6', '27TPA8', '27SPA6', '59TP6', '58TP0', 'FT5', 'CVAMA', 'CVAVA', 'EB-STATE6ICR-01', 'TSTATCCEWF-01', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP'],
+                img: 'images/UVCAP.jpg'
             },
-            { 
-                id: 'EZXCAB', category: 'Air Quality', name: 'Comfort EZ Flex Cabinet Air Filter', 
+            {
+                id: 'EZXCAB', category: 'Air Quality', name: 'Comfort EZ Flex Cabinet Air Filter',
                 rating: 'MERV 10 Filtration', tier: 1, size: 'N/A', type: 'Accessory', btu: 0,
-                specLink: 'https://www.carrier.com/residential/en/us/products/indoor-air-quality/air-purifiers/ezxcab/', 
-                compatibleWith: ['26SCA4', '26SCA5', '27SCA5', '58DLA', '58SCA', 'FJ5', 'TSTATCCEWF-01', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP'], 
-                img: getIconForCategory('Air Quality', '') 
+                specLink: 'https://www.carrier.com/residential/en/us/products/indoor-air-quality/air-purifiers/ezxcab/',
+                compatibleWith: ['26SCA4', '26SCA5', '27SCA5', '58DLA', '58SCA', 'FJ5', 'TSTATCCEWF-01', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP'],
+                img: 'images/EZXCAB.jpg'
             },
             { id: 'FNCCAB', category: 'Air Quality', name: 'Comfort Mechanical Air Cleaner', rating: 'MERV 13 Filtration', tier: 1, size: 'N/A', type: 'Accessory', btu: 0, specLink: 'https://www.carrier.com/residential/en/us/products/indoor-air-quality/air-purifiers/fnccab/', compatibleWith: ['26SCA4', '26SCA5', '27SCA5', '58DLA', '58SCA', 'FJ5', 'TSTATCCEWF-01', 'HUMCRSTM', 'HUMCRLFP', 'HUMCRLBP'], img: getIconForCategory('Air Quality', '') },
-            
+
             // --- REAL CARRIER HUMIDIFIER UNITS ---
-            { id: 'HUMCRSTM', category: 'Air Quality', name: 'Performance Steam Humidifier', rating: 'Up to 34 gal/day, Steam Type', tier: 2, size: 'N/A', type: 'Accessory', btu: 0, specLink: 'https://www.carrier.com/residential/en/us/products/indoor-air-quality/humidifiers/humcrstm/', compatibleWith: ['26VNA1', '26TPA8', '26SPA6', '26SCA4', '27VNA3', '27TPA8', '27SPA6', '27SCA5', '59MN7', '59TN6', '59TP6', '58TP0', '58DLA', 'FE5B', 'FT5', 'FJ5', 'DGAPA', 'UVCAP', 'EZXCAB', 'FNCCAB'], img: getIconForCategory('Air Quality', '') },
+            { id: 'HUMCRSTM', category: 'Air Quality', name: 'Performance Steam Humidifier', rating: 'Up to 34 gal/day, Steam Type', tier: 2, size: 'N/A', type: 'Accessory', btu: 0, specLink: 'https://www.carrier.com/residential/en/us/products/indoor-air-quality/humidifiers/humcrstm/', compatibleWith: ['26VNA1', '26TPA8', '26SPA6', '26SCA4', '27VNA3', '27TPA8', '27SPA6', '27SCA5', '59MN7', '59TN6', '59TP6', '58TP0', '58DLA', 'FE5B', 'FT5', 'FJ5', 'DGAPA', 'UVCAP', 'EZXCAB', 'FNCCAB'], img: 'images/HUMCRSTM.jpg' },
             { id: 'HUMCRLFP', category: 'Air Quality', name: 'Performance Large Fan-Powered Humidifier', rating: 'Up to 18 gal/day, Fan-Powered Type', tier: 2, size: 'N/A', type: 'Accessory', btu: 0, specLink: 'https://www.carrier.com/residential/en/us/products/indoor-air-quality/humidifiers/humcrlfp/', compatibleWith: ['26VNA1', '26TPA8', '26SPA6', '26SCA4', '27VNA3', '27TPA8', '27SPA6', '27SCA5', '59MN7', '59TN6', '59TP6', '58TP0', '58DLA', 'FE5B', 'FT5', 'FJ5', 'DGAPA', 'UVCAP', 'EZXCAB', 'FNCCAB'], img: getIconForCategory('Air Quality', '') },
             { id: 'HUMCRLBP', category: 'Air Quality', name: 'Performance Large Bypass Humidifier', rating: 'Up to 18 gal/day, Bypass Type', tier: 2, size: 'N/A', type: 'Accessory', btu: 0, specLink: 'https://www.carrier.com/residential/en/us/products/indoor-air-quality/humidifiers/humcrlbp/', compatibleWith: ['26VNA1', '26TPA8', '26SPA6', '26SCA4', '27VNA3', '27TPA8', '27SPA6', '27SCA5', '59MN7', '59TN6', '59TP6', '58TP0', '58DLA', 'FE5B', 'FT5', 'FJ5', 'DGAPA', 'UVCAP', 'EZXCAB', 'FNCCAB'], img: getIconForCategory('Air Quality', '') },
 
             // --- REAL CARRIER DUCTLESS UNITS ---
-            { 
-                id: '37MPRA', category: 'Ductless', name: 'Infinity Single-Zone Heat Pump w/ Basepan Heater', 
+            {
+                id: '37MPRA', category: 'Ductless', name: 'Infinity Single-Zone Heat Pump w/ Basepan Heater',
                 rating: 'Up to 35.1 SEER2 / 30 HSPF', tier: 3, size: 'Single Zone', type: 'Outdoor', btu: 24000,
-                specLink: 'https://www.carrier.com/residential/en/us/products/ductless-mini-splits/37mpra/', 
-                compatibleWith: ['45MPHA', 'SYSTXCCITC01-C', 'SYSTXCCWIC01-C'] 
-                , img: getIconForCategory('Ductless', '')
+                specLink: 'https://www.carrier.com/residential/en/us/products/ductless-mini-splits/37mpra/',
+                compatibleWith: ['45MPHA', 'SYSTXCCITC01-C', 'SYSTXCCWIC01-C']
+                , img: 'images/37MPRA.jpg'
             },
-            { id: '45MPHA', category: 'Ductless', name: 'Infinity High Wall Indoor Unit', rating: 'Extremely Quiet', tier: 3, size: 'Single/Multi Zone', type: 'Indoor', btu: 24000, specLink: 'https://www.carrier.com/residential/en/us/products/ductless-mini-splits/45mpha/', compatibleWith: ['37MPRA', '37MAHA', '37MGHA', 'SYSTXCCITC01-C', 'SYSTXCCWIC01-C'] , img: getIconForCategory('Ductless', '')},
-            { id: '37MARA', category: 'Ductless', name: 'Performance Single-Zone Heat Pump', rating: 'Up to 26 SEER2 / 13.9 HSPF', tier: 2, size: 'Single Zone', type: 'Outdoor', btu: 18000, specLink: 'https://www.carrier.com/residential/en/us/products/ductless-mini-splits/37mara/', compatibleWith: ['45MAHA', 'EB-STATE6ICR-01', 'TSTATCCEWF-01'] , img: getIconForCategory('Ductless', '')},
-            { id: '45MAHA', category: 'Ductless', name: 'Performance High Wall Indoor Unit', rating: 'Extremely Quiet', tier: 2, size: 'Single/Multi Zone', type: 'Indoor', btu: 18000, specLink: 'https://www.carrier.com/residential/en/us/products/ductless-mini-splits/45maha/', compatibleWith: ['37MARA', '37MGRA', 'EB-STATE6ICR-01', 'TSTATCCEWF-01'] , img: getIconForCategory('Ductless', '')},
-            
+            { id: '45MPHA', category: 'Ductless', name: 'Infinity High Wall Indoor Unit', rating: 'Extremely Quiet', tier: 3, size: 'Single/Multi Zone', type: 'Indoor', btu: 24000, specLink: 'https://www.carrier.com/residential/en/us/products/ductless-mini-splits/45mpha/', compatibleWith: ['37MPRA', '37MAHA', '37MGHA', 'SYSTXCCITC01-C', 'SYSTXCCWIC01-C'], img: getIconForCategory('Ductless', '') },
+            { id: '37MARA', category: 'Ductless', name: 'Performance Single-Zone Heat Pump', rating: 'Up to 26 SEER2 / 13.9 HSPF', tier: 2, size: 'Single Zone', type: 'Outdoor', btu: 18000, specLink: 'https://www.carrier.com/residential/en/us/products/ductless-mini-splits/37mara/', compatibleWith: ['45MAHA', 'EB-STATE6ICR-01', 'TSTATCCEWF-01'], img: getIconForCategory('Ductless', '') },
+            { id: '45MAHA', category: 'Ductless', name: 'Performance High Wall Indoor Unit', rating: 'Extremely Quiet', tier: 2, size: 'Single/Multi Zone', type: 'Indoor', btu: 18000, specLink: 'https://www.carrier.com/residential/en/us/products/ductless-mini-splits/45maha/', compatibleWith: ['37MARA', '37MGRA', 'EB-STATE6ICR-01', 'TSTATCCEWF-01'], img: getIconForCategory('Ductless', '') },
+
             // --- REAL CARRIER PACKAGED UNITS ---
-            { 
-                id: '48NG', category: 'Packaged Unit', name: 'Performance 15 Packaged Gas Furnace/AC', 
+            {
+                id: '48NG', category: 'Packaged Unit', name: 'Performance 15 Packaged Gas Furnace/AC',
                 rating: 'Up to 16 SEER2 / 81% AFUE, Gas/Electric', tier: 2, size: 'N/A', type: 'Packaged', btu: 36000,
-                specLink: 'https://www.carrier.com/residential/en/us/products/combined-heating-cooling/48ng/', 
-                compatibleWith: ['EB-STATE6ICR-01', 'TSTATCCEWF-01'], 
-                img: getIconForCategory('Packaged Unit', '') 
+                specLink: 'https://www.carrier.com/residential/en/us/products/combined-heating-cooling/48ng/',
+                compatibleWith: ['EB-STATE6ICR-01', 'TSTATCCEWF-01'],
+                img: 'images/48NG.jpg'
             },
-            { 
-                id: '50VR', category: 'Packaged Unit', name: 'Performance 15 Packaged Heat Pump System', 
+            {
+                id: '50VR', category: 'Packaged Unit', name: 'Performance 15 Packaged Heat Pump System',
                 rating: 'Up to 15.5 SEER2 / 7.5 HSPF, Electric', tier: 2, size: 'N/A', type: 'Packaged', btu: 30000,
-                specLink: 'https://www.carrier.com/residential/en/us/products/combined-heating-cooling/50vr/', 
-                compatibleWith: ['EB-STATE6ICR-01', 'TSTATCCEWF-01'], 
-                img: getIconForCategory('Packaged Unit', '') 
+                specLink: 'https://www.carrier.com/residential/en/us/products/combined-heating-cooling/50vr/',
+                compatibleWith: ['EB-STATE6ICR-01', 'TSTATCCEWF-01'],
+                img: 'images/50VR.jpg'
             },
-            { 
-                id: '48NL', category: 'Packaged Unit', name: 'Comfort 14 Packaged Gas Furnace/AC', 
+            {
+                id: '48NL', category: 'Packaged Unit', name: 'Comfort 14 Packaged Gas Furnace/AC',
                 rating: '13.4 SEER2 / 81% AFUE, Gas/Electric', tier: 1, size: 'N/A', type: 'Packaged', btu: 30000,
-                specLink: 'https://www.carrier.com/residential/en/us/products/combined-heating-cooling/48nl/', 
-                compatibleWith: ['TSTATCCEWF-01'], 
-                img: getIconForCategory('Packaged Unit', '') 
+                specLink: 'https://www.carrier.com/residential/en/us/products/combined-heating-cooling/48nl/',
+                compatibleWith: ['TSTATCCEWF-01'],
+                img: getIconForCategory('Packaged Unit', '')
             },
-            { 
-                id: '50NP', category: 'Packaged Unit', name: 'Comfort 14 Packaged Air Conditioner System', 
+            {
+                id: '50NP', category: 'Packaged Unit', name: 'Comfort 14 Packaged Air Conditioner System',
                 rating: '13.4 SEER2, Cooling Only', tier: 1, size: 'N/A', type: 'Packaged', btu: 24000,
-                specLink: 'https://www.carrier.com/residential/en/us/products/combined-heating-cooling/50np/', 
-                compatibleWith: ['TSTATCCEWF-01'], 
-                img: getIconForCategory('Packaged Unit', '') 
+                specLink: 'https://www.carrier.com/residential/en/us/products/combined-heating-cooling/50np/',
+                compatibleWith: ['TSTATCCEWF-01'],
+                img: getIconForCategory('Packaged Unit', '')
             },
         ];
 
@@ -507,15 +605,15 @@
             const container = document.getElementById('category-filters');
             container.innerHTML = categories.map(cat => `
                 <button onclick="setCategory('${cat}')"
-                        class="px-3 py-1 text-sm font-medium rounded-full transition duration-150 shadow-sm
-                        ${currentCategory === cat ? 'bg-orange-500 text-white shadow-md' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}"
+                        class="px-3 py-1 text-sm font-bold rounded transition duration-150 shadow-sm uppercase tracking-wide
+                        ${currentCategory === cat ? 'bg-red-600 text-white shadow-md' : 'bg-slate-200 text-slate-700 hover:bg-slate-300'}"
                 >
                     ${cat}
                 </button>
             `).join('');
         }
 
-        window.setCategory = function(cat) {
+        window.setCategory = function (cat) {
             currentCategory = cat;
             renderCategories();
             filterEquipment();
@@ -527,14 +625,14 @@
             const match = rating.match(regex);
             return match ? parseFloat(match[1]) : 0;
         }
-        
+
         function formatBTU(btu) {
             if (btu >= 1000) {
                 return (btu / 1000).toLocaleString() + 'k BTU';
             }
             return btu.toLocaleString() + ' BTU';
         }
-        
+
         function formatTonnage(btu) {
             if (btu > 0) {
                 const tons = btu / 12000;
@@ -547,15 +645,15 @@
             const afueMatch = item.rating.match(/(\d+\.?\d*)\s*%?\s*AFUE/i);
             const seerMatch = item.rating.match(/(\d+\.?\d*)\s*SEER2/i);
             const hspfMatch = item.rating.match(/(\d+\.?\d*)\s*HSPF/i);
-            
+
             let badges = '';
-            
+
             if (item.btu > 0) {
                 // Check name to distinguish Furnace (Input) vs Fan Coil (Nominal)
                 if (item.name.toLowerCase().includes('furnace')) {
                     badges += `<span class="px-1.5 py-0.5 rounded bg-blue-100 text-blue-800 text-[10px] font-bold border border-blue-200">${formatBTU(item.btu)}</span>`;
                 } else {
-                     badges += `<span class="px-1.5 py-0.5 rounded bg-blue-100 text-blue-800 text-[10px] font-bold border border-blue-200">${formatTonnage(item.btu)}</span>`;
+                    badges += `<span class="px-1.5 py-0.5 rounded bg-blue-100 text-blue-800 text-[10px] font-bold border border-blue-200">${formatTonnage(item.btu)}</span>`;
                 }
             }
 
@@ -566,7 +664,7 @@
                 if (seerVal >= 20) colorClass = 'bg-green-100 text-green-800 border-green-300'; // Premium
                 else if (seerVal >= 16) colorClass = 'bg-teal-100 text-teal-800 border-teal-200'; // Better
                 else if (seerVal >= 14) colorClass = 'bg-blue-50 text-blue-800 border-blue-200'; // Good
-                
+
                 badges += `<span class="px-1.5 py-0.5 rounded text-[10px] font-bold border ${colorClass}">${seerMatch[1]} SEER2</span>`;
             }
 
@@ -577,14 +675,14 @@
                 if (afueVal >= 98) colorClass = 'bg-orange-100 text-orange-900 border-orange-300'; // Ultimate
                 else if (afueVal >= 95) colorClass = 'bg-orange-50 text-orange-800 border-orange-200'; // Premium
                 else if (afueVal >= 90) colorClass = 'bg-yellow-50 text-yellow-800 border-yellow-200'; // High Eff
-                
+
                 badges += `<span class="px-1.5 py-0.5 rounded text-[10px] font-bold border ${colorClass}">${afueMatch[1]}% AFUE</span>`;
             }
 
-             if (hspfMatch) {
+            if (hspfMatch) {
                 badges += `<span class="px-1.5 py-0.5 rounded bg-purple-50 text-purple-800 text-[10px] font-bold border border-purple-100">${hspfMatch[1]} HSPF</span>`;
             }
-            
+
             return badges;
         }
 
@@ -592,24 +690,24 @@
         function getSimplifiedRating(item) {
             const afueMatch = item.rating.match(/(\d+\.?\d*)\s*%?\s*AFUE/i);
             const seerMatch = item.rating.match(/(\d+\.?\d*)\s*SEER2/i);
-            
+
             // Default View (Small list item)
             if (seerMatch) return `${seerMatch[1]} SEER2`;
             if (afueMatch) return `${afueMatch[1]}% AFUE`;
             if (item.btu > 0) return formatTonnage(item.btu);
-            
+
             return item.category;
         }
 
-        window.setSort = function(sortType) {
+        window.setSort = function (sortType) {
             currentSort = sortType;
             filterEquipment();
         }
 
-        window.filterEquipment = function() {
+        window.filterEquipment = function () {
             currentSearch = document.getElementById('search-input').value.toLowerCase();
             const listContainer = document.getElementById('equipment-list');
-            
+
             const existingUniqueCategories = new Set(
                 currentSystem
                     .map(id => equipmentData.find(item => item.id === id)?.category)
@@ -619,9 +717,9 @@
             let filtered = equipmentData.filter(item => {
                 const matchesCategory = currentCategory === 'All' || item.category === currentCategory;
                 const matchesSearch = item.id.toLowerCase().includes(currentSearch) ||
-                                      item.name.toLowerCase().includes(currentSearch) ||
-                                      item.category.toLowerCase().includes(currentSearch);
-                
+                    item.name.toLowerCase().includes(currentSearch) ||
+                    item.category.toLowerCase().includes(currentSearch);
+
                 const isUniqueCategory = UNIQUE_CATEGORIES.includes(item.category);
                 const isAlreadyPresent = existingUniqueCategories.has(item.category);
                 const isCurrentlySelected = window.currentEquipment && window.currentEquipment.id === item.id;
@@ -629,35 +727,35 @@
                 if (isUniqueCategory && isAlreadyPresent && !isCurrentlySelected) {
                     return false;
                 }
-                
+
                 return matchesCategory && matchesSearch;
             });
-            
+
             // Sort Logic (simplified for brevity in this pass, relies on helper logic)
             if (currentSort === 'SEER2') {
-                filtered = filtered.filter(i => i.rating.includes('SEER')).sort((a,b) => extractEfficiency(b.rating, 'SEER2') - extractEfficiency(a.rating, 'SEER2'));
+                filtered = filtered.filter(i => i.rating.includes('SEER')).sort((a, b) => extractEfficiency(b.rating, 'SEER2') - extractEfficiency(a.rating, 'SEER2'));
             } else if (currentSort === 'ModelLine') {
-                filtered.sort((a, b) => b.tier - a.tier); 
+                filtered.sort((a, b) => b.tier - a.tier);
             } else {
-                 filtered.sort((a, b) => a.id.localeCompare(b.id));
+                filtered.sort((a, b) => a.id.localeCompare(b.id));
             }
 
             listContainer.innerHTML = filtered.map(item => {
                 const isInSystem = currentSystem.includes(item.id);
                 const isSelected = window.currentEquipment && window.currentEquipment.id === item.id;
-                
-                let highlightClass = 'bg-gray-50 text-gray-800 hover:bg-carrier-blue hover:text-white';
-                let textClass = 'text-gray-500 hover:text-gray-200';
+
+                let highlightClass = 'bg-white text-slate-700 hover:bg-slate-100 border-l-4 border-transparent';
+                let textClass = 'text-slate-500';
 
                 if (isInSystem) {
-                     highlightClass = 'bg-indigo-100 text-indigo-800 font-semibold border-indigo-300';
-                     textClass = 'text-indigo-600';
+                    highlightClass = 'bg-slate-100 text-slate-900 font-semibold border-l-4 border-slate-800';
+                    textClass = 'text-slate-700';
                 }
                 if (isSelected) {
-                    highlightClass = 'bg-orange-100 text-orange-900 font-bold border-l-4 border-orange-500 shadow-sm';
-                    textClass = 'text-orange-800';
+                    highlightClass = 'bg-red-50 text-red-900 font-bold border-l-4 border-red-600 shadow-sm';
+                    textClass = 'text-red-800';
                 }
-                
+
                 return `
                     <div onclick="showDetails('${item.id}')"
                          class="p-3 rounded-lg cursor-pointer transition duration-150 shadow-sm border border-gray-100 ${highlightClass} mb-2 flex items-center">
@@ -667,7 +765,7 @@
                         <div class="flex-1 min-w-0">
                             <div class="flex justify-between items-center">
                                 <span class="font-medium truncate text-sm">${item.name}</span>
-                                ${isInSystem ? '<span class="text-[10px] bg-indigo-200 px-1 rounded text-indigo-800 ml-1">ADDED</span>' : ''}
+                                ${isInSystem ? '<span class="text-[10px] bg-slate-200 px-1 rounded text-slate-800 ml-1 font-bold">ADDED</span>' : ''}
                             </div>
                             <div class="flex justify-between mt-0.5">
                                 <span class="text-xs opacity-75">${item.id}</span>
@@ -695,13 +793,13 @@
                 if (name.includes('furnace')) {
                     nextCat = 'Evaporator Coil';
                 } else {
-                     // Fan Coil / Air Handler logic -> Skip Coil
-                     nextCat = 'Outdoor Unit';
+                    // Fan Coil / Air Handler logic -> Skip Coil
+                    nextCat = 'Outdoor Unit';
                 }
-            } 
+            }
             else if (cat === 'Evaporator Coil') {
                 // Default to AC as the "Condenser", but the user can manually select Heat Pump if desired
-                nextCat = 'Outdoor Unit'; 
+                nextCat = 'Outdoor Unit';
             }
             else if (cat === 'Outdoor Unit') {
                 nextCat = 'Control';
@@ -715,7 +813,7 @@
             }
         }
 
-        window.selectComponent = function(id) {
+        window.selectComponent = function (id) {
             const itemToSelect = equipmentData.find(item => item.id === id);
             if (!itemToSelect) return;
 
@@ -726,16 +824,16 @@
             // Removal
             if (index > -1) {
                 currentSystem.splice(index, 1);
-            } 
+            }
             // Addition
             else {
                 const isUniqueCategory = UNIQUE_CATEGORIES.includes(itemCategory);
                 let existingItemIndex = -1;
 
                 if (isUniqueCategory) {
-                     const existingItem = currentSystem.map((sysId, idx) => ({id: sysId, index: idx, category: equipmentData.find(e => e.id === sysId)?.category}))
-                                                       .find(item => item && item.category === itemCategory);
-                     if (existingItem) existingItemIndex = existingItem.index;
+                    const existingItem = currentSystem.map((sysId, idx) => ({ id: sysId, index: idx, category: equipmentData.find(e => e.id === sysId)?.category }))
+                        .find(item => item && item.category === itemCategory);
+                    if (existingItem) existingItemIndex = existingItem.index;
                 }
 
                 if (existingItemIndex > -1) {
@@ -746,16 +844,16 @@
                     autoSwitchCategory(itemToSelect);
                 }
             }
-            
+
             renderSystem();
-            showDetails(id); 
-            filterEquipment(); 
+            showDetails(id);
+            filterEquipment();
         }
 
 
-        window.clearSystem = function() {
+        window.clearSystem = function () {
             currentSystem = [];
-            window.currentEquipment = null; 
+            window.currentEquipment = null;
             renderSystem();
             document.getElementById('initial-message').classList.remove('hidden');
             document.getElementById('item-details').classList.add('hidden');
@@ -770,9 +868,9 @@
             let totalAfue = 0;
             let countCooling = 0;
             let countHeating = 0;
-            
+
             const systemComponents = currentSystem.map(id => equipmentData.find(item => item.id === id));
-            
+
             systemComponents.forEach(item => {
                 if (!item) return;
 
@@ -801,15 +899,15 @@
 
             let combinedText = '';
             if (avgSeer) {
-                combinedText += `Cooling Avg: <span class="font-bold text-indigo-700">${avgSeer} SEER2</span>`;
+                combinedText += `Cooling Avg: <span class="font-bold text-bse-blue">${avgSeer} SEER2</span>`;
             }
             if (avgSeer && avgAfue) {
                 combinedText += ' • ';
             }
             if (avgAfue) {
-                combinedText += `Heating Avg: <span class="font-bold text-indigo-700">${avgAfue}% Eff.</span>`;
+                combinedText += `Heating Avg: <span class="font-bold text-red-600">${avgAfue}% Eff.</span>`;
             }
-            
+
             return combinedText || '<span class="text-xs text-gray-400 italic">Add major components to calculate.</span>';
         }
 
@@ -823,13 +921,13 @@
             if (!systemContainer) return;
 
             combinedRatingElement.innerHTML = calculateCombinedRating();
-            
+
             const count = currentSystem.length;
             componentCountElement.textContent = count === 0 ? "Empty" : `${count} Item${count !== 1 ? 's' : ''}`;
 
             if (count === 0) {
                 systemContainer.innerHTML = `
-                    <div class="flex flex-col items-center justify-center h-40 text-indigo-300 border-2 border-dashed border-indigo-200 rounded-lg bg-white">
+                    <div class="flex flex-col items-center justify-center h-40 text-slate-400 border-2 border-dashed border-slate-300 rounded-lg bg-white">
                         <span class="text-xs font-medium">System Empty</span>
                     </div>
                 `;
@@ -838,14 +936,14 @@
             }
 
             clearBtn.style.display = 'block';
-            
+
             const systemHtml = currentSystem.map(id => {
                 const item = equipmentData.find(e => e.id === id);
                 const isSelected = window.currentEquipment && window.currentEquipment.id === id;
-                const baseClass = isSelected 
-                    ? 'ring-2 ring-orange-400 bg-white shadow-md' 
+                const baseClass = isSelected
+                    ? 'ring-2 ring-orange-400 bg-white shadow-md'
                     : 'bg-white border border-gray-200 hover:shadow-sm';
-                
+
                 return item ? `
                     <div onclick="showDetails('${item.id}')" class="flex flex-row items-center p-3 rounded-lg cursor-pointer transition-all duration-200 ${baseClass} group">
                          <div class="w-12 h-12 flex-shrink-0 bg-gray-50 rounded overflow-hidden border border-gray-100 flex items-center justify-center">
@@ -853,7 +951,7 @@
                          </div>
                          <div class="ml-3 flex-1 min-w-0">
                              <div class="flex justify-between items-start">
-                                <span class="text-[10px] font-bold uppercase tracking-wider text-indigo-500">${item.category}</span>
+                                <span class="text-[10px] font-bold uppercase tracking-wider text-slate-500">${item.category}</span>
                                 <button onclick="event.stopPropagation(); selectComponent('${item.id}')" class="text-gray-300 hover:text-red-500 transition-colors -mt-1">
                                     &times;
                                 </button>
@@ -870,33 +968,33 @@
             systemContainer.innerHTML = systemHtml;
         }
 
-        window.showDetails = function(id) {
+        window.showDetails = function (id) {
             window.currentEquipment = equipmentData.find(item => item.id === id);
             if (!window.currentEquipment) return;
 
             document.getElementById('initial-message').classList.add('hidden');
             document.getElementById('item-details').classList.remove('hidden');
-            
+
             document.getElementById('detail-title').textContent = `${window.currentEquipment.id}`;
             document.getElementById('item-image').src = window.currentEquipment.img;
-            
+
             const addBtn = document.getElementById('add-to-system-btn');
             const isInSystem = currentSystem.includes(window.currentEquipment.id);
             const isUniqueCategory = UNIQUE_CATEGORIES.includes(window.currentEquipment.category);
-            
+
             let existingItem = null;
             if (isUniqueCategory) {
                 existingItem = currentSystem.map(id => equipmentData.find(item => item.id === id)).find(item => item && item.category === window.currentEquipment.category && item.id !== window.currentEquipment.id);
             }
 
-            addBtn.className = "w-full py-3 px-4 font-bold rounded-lg shadow-md transition duration-150 transform active:scale-95"; 
+            addBtn.className = "w-full py-3 px-4 font-bold rounded-lg shadow-md transition duration-150 transform active:scale-95";
 
             if (isInSystem) {
                 addBtn.textContent = "Remove from Build";
                 addBtn.classList.add('bg-red-500', 'text-white', 'hover:bg-red-600');
             } else if (existingItem) {
-                 addBtn.textContent = `Swap ${existingItem.id}`;
-                 addBtn.classList.add('bg-yellow-500', 'text-white', 'hover:bg-yellow-600');
+                addBtn.textContent = `Swap ${existingItem.id}`;
+                addBtn.classList.add('bg-yellow-500', 'text-white', 'hover:bg-yellow-600');
             } else {
                 addBtn.textContent = "Add to Build";
                 addBtn.classList.add('bg-green-600', 'text-white', 'hover:bg-green-700');
@@ -911,10 +1009,10 @@
             `;
 
             document.getElementById('spec-sheet-link').href = window.currentEquipment.specLink || '#';
-            
+
             renderCompatibility(window.currentEquipment);
             renderSystem();
-            filterEquipment(); 
+            filterEquipment();
         }
 
         function renderCompatibility(selectedItem) {
@@ -924,7 +1022,7 @@
 
             const sysComps = currentSystem.map(id => equipmentData.find(i => i.id === id)).filter(Boolean);
             let compsToCheck = sysComps.length === 0 ? [selectedItem] : [...sysComps, selectedItem];
-            
+
             let potentialMatches = new Set(compsToCheck[0].compatibleWith || []);
             for (let i = 1; i < compsToCheck.length; i++) {
                 const currentMatches = new Set(compsToCheck[i].compatibleWith || []);
@@ -963,4 +1061,5 @@
         renderSystem(); 
     </script>
 </body>
+
 </html>
