@@ -46,61 +46,9 @@ SIZE_TEMPLATES = {
     ]
 }
 
-# 2. Extract Data from index.html
-with open('index.html', 'r') as f:
-    content = f.read()
-
-# Extract the JS object string again
-# We'll use the same logic as before to parse it roughly
-chunks = content.split('const equipmentData = [')[1].split('];')[0]
-
-# Helper to parse JS object string to dict
-def parse_js_obj(chunk):
-    id_match = re.search(r"id:\s*'([^']+)'", chunk)
-    if not id_match: return None
-    
-    obj = {}
-    obj['id'] = id_match.group(1)
-    
-    cat_match = re.search(r"category:\s*'([^']+)'", chunk)
-    obj['category'] = cat_match.group(1) if cat_match else ''
-    
-    name_match = re.search(r"name:\s*'([^']+)'", chunk)
-    obj['name'] = name_match.group(1) if name_match else ''
-    
-    rating_match = re.search(r"rating:\s*'([^']+)'", chunk)
-    obj['rating'] = rating_match.group(1) if rating_match else ''
-    
-    tier_match = re.search(r"tier:\s*(\d+)", chunk)
-    obj['tier'] = int(tier_match.group(1)) if tier_match else 1
-    
-    type_match = re.search(r"type:\s*'([^']+)'", chunk)
-    obj['type'] = type_match.group(1) if type_match else ''
-    
-    btu_match = re.search(r"btu:\s*(\d+)", chunk)
-    obj['btu'] = int(btu_match.group(1)) if btu_match else 0
-    
-    spec_match = re.search(r"specLink:\s*'([^']+)'", chunk)
-    obj['specLink'] = spec_match.group(1) if spec_match else ''
-    
-    img_match = re.search(r"img:\s*'([^']+)'", chunk)
-    obj['img'] = img_match.group(1) if img_match else ''
-    
-    ahri_match = re.search(r"ahriRef:\s*'([^']+)'", chunk)
-    if ahri_match: obj['ahriRef'] = ahri_match.group(1)
-
-    comp_match = re.search(r"compatibleWith:\s*\[(.*?)\]", chunk, re.DOTALL)
-    obj['compatibleWith'] = []
-    if comp_match:
-        obj['compatibleWith'] = re.findall(r"'([^']+)'", comp_match.group(1))
-        
-    return obj
-
-raw_items = []
-for chunk in chunks.split('{'):
-    if not chunk.strip(): continue
-    item = parse_js_obj(chunk)
-    if item: raw_items.append(item)
+# 2. Extract Data from seed_equipment.json
+with open('seed_equipment.json', 'r') as f:
+    raw_items = json.load(f)
 
 # 3. Expand Items
 expanded_items = []
@@ -147,17 +95,88 @@ for item in raw_items:
     
     id_mapping[item['id']] = new_ids
 
-# Second pass: Update compatibility
+# Second pass: Update compatibility with STRICT rules
 for item in expanded_items:
     new_compat = []
-    for old_comp_id in item['compatibleWith']:
+    
+    # Determine current item's properties
+    my_cat = item.get('category', '')
+    my_btu = item.get('btu', 0)
+    
+    # Helper to get tonnage from BTU
+    def get_tonnage(btu):
+        return btu / 12000.0
+
+    my_tons = get_tonnage(my_btu)
+
+    for old_comp_id in item.get('compatibleWith', []):
         if old_comp_id in id_mapping:
-            new_compat.extend(id_mapping[old_comp_id])
-        else:
-            # If mapped ID not found (maybe deleted or typo), keep original to be safe?
-            # Or drop it. Let's drop it to be clean.
-            pass
-    item['compatibleWith'] = new_compat
+            potential_ids = id_mapping[old_comp_id]
+            
+            for pid in potential_ids:
+                # Find the target item object to check its properties
+                target = next((x for x in expanded_items if x['id'] == pid), None)
+                if not target: continue
+                
+                target_cat = target.get('category', '')
+                target_btu = target.get('btu', 0)
+                target_tons = get_tonnage(target_btu)
+
+                # --- RULE 1: Category Compatibility ---
+                # Outdoor Units cannot be compatible with other Outdoor Units or Packaged Units
+                if my_cat == 'Outdoor Unit' and target_cat in ['Outdoor Unit', 'Packaged Unit']:
+                    continue
+                # Packaged Units cannot be compatible with Outdoor or Indoor units (usually)
+                # But our data might have them compatible with Controls, which is fine.
+                if my_cat == 'Packaged Unit' and target_cat in ['Outdoor Unit', 'Indoor Unit']:
+                    continue
+
+                # --- RULE 2: Sizing Compatibility ---
+                
+                # Case A: Outdoor Unit <-> Indoor Unit (Fan Coil / Evap Coil)
+                # Tonnage must match EXACTLY
+                if (my_cat == 'Outdoor Unit' and target_cat in ['Indoor Unit', 'Evaporator Coil']) or \
+                   (my_cat in ['Indoor Unit', 'Evaporator Coil'] and target_cat == 'Outdoor Unit'):
+                    
+                    # Check if target is a Furnace (which has different rules)
+                    is_furnace = 'Furnace' in target.get('name', '') if my_cat == 'Outdoor Unit' else 'Furnace' in item.get('name', '')
+                    
+                    if not is_furnace:
+                        # It's a Fan Coil or Evap Coil -> Exact Tonnage Match
+                        if my_tons != target_tons:
+                            continue
+
+                # Case B: Outdoor Unit <-> Furnace
+                # Airflow/Capacity matching rules
+                if (my_cat == 'Outdoor Unit' and 'Furnace' in target.get('name', '')) or \
+                   ('Furnace' in item.get('name', '') and target_cat == 'Outdoor Unit'):
+                    
+                    outdoor_tons = my_tons if my_cat == 'Outdoor Unit' else target_tons
+                    furnace_btu = target_btu if my_cat == 'Outdoor Unit' else my_btu
+                    
+                    # Rules:
+                    # 2 Ton AC -> 60k, 80k
+                    # 3 Ton AC -> 60k, 80k, 100k
+                    # 4 Ton AC -> 80k, 100k, 120k
+                    # 5 Ton AC -> 100k, 120k
+                    
+                    valid_match = False
+                    if outdoor_tons == 2.0:
+                        if furnace_btu in [60000, 80000]: valid_match = True
+                    elif outdoor_tons == 3.0:
+                        if furnace_btu in [60000, 80000, 100000]: valid_match = True
+                    elif outdoor_tons == 4.0:
+                        if furnace_btu in [80000, 100000, 120000]: valid_match = True
+                    elif outdoor_tons == 5.0:
+                        if furnace_btu in [100000, 120000]: valid_match = True
+                    
+                    if not valid_match:
+                        continue
+
+                # If we passed all checks, add it
+                new_compat.append(pid)
+
+    item['compatibleWith'] = list(set(new_compat)) # Remove duplicates
 
 # 4. Output JSON
 print(json.dumps(expanded_items, indent=4))
