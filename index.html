@@ -5957,7 +5957,10 @@
 
             // Sort Logic
             // Enhancement: User requested "Performance Model line first for all types"
-            const isPerformance = (item) => item.name && item.name.includes('Performance');
+            // Sort Logic
+            // Enhancement: User requested "Performance Model line first for all types"
+            // "Performance" line corresponds to Tier 2.
+            const isPerformance = (item) => (item.name && item.name.toLowerCase().includes('performance')) || item.tier === 2;
 
             if (currentSort === 'SEER2') {
                 filtered = filtered.filter(i => i.rating.includes('SEER'));
