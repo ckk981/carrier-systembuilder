@@ -93,6 +93,19 @@ for item in raw_items:
         # Propagate price from the SEED item to the NEW item
         if 'price' in item and item['price'] is not None:
              new_item['price'] = item['price']
+        else:
+            # Fallback Pricing Logic (Demo Mode) to ensure UI is populated
+            base_price = 1500
+            tonnage = new_item.get('btu', 24000) / 12000
+            tier_mult = 1.0 + (item.get('tier', 1) * 0.2) # Tier 1=1.2, Tier 2=1.4, Tier 3=1.6
+            
+            estimated = (base_price + (tonnage * 400)) * tier_mult
+            
+            # Round to nice number
+            import math
+            new_item['price'] = int(math.ceil(estimated / 10.0)) * 10
+            # Mark as estimated
+            new_item['priceEstimated'] = True
         
         expanded_items.append(new_item)
         new_ids.append(new_item['id'])
