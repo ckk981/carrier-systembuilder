@@ -21,7 +21,8 @@
             "HUMCRSTM",
             "HUMCRLFP",
             "HUMCRLBP"
-        ]
+        ],
+        "price": 3400
     },
     {
         "id": "26TPA8",
@@ -54,7 +55,8 @@
             "48VR",
             "50VG",
             "50VR"
-        ]
+        ],
+        "price": 2383
     },
     {
         "id": "26SPA6",
@@ -87,7 +89,8 @@
             "48VR",
             "50VG",
             "50VR"
-        ]
+        ],
+        "price": 2448
     },
     {
         "id": "26SCA4",
@@ -115,7 +118,8 @@
             "50NP",
             "48NT",
             "50ZH"
-        ]
+        ],
+        "price": 1753
     },
     {
         "id": "26TPA8***C",
@@ -142,7 +146,8 @@
             "HUMCRLFP",
             "HUMCRLBP"
         ],
-        "img": "images/26TPA8***C.jpg"
+        "img": "images/26TPA8***C.jpg",
+        "price": 2383
     },
     {
         "id": "26SCA5",
@@ -216,7 +221,8 @@
             "HUMCRLFP",
             "HUMCRLBP"
         ],
-        "img": "images/59MN7.jpg"
+        "img": "images/59MN7.jpg",
+        "price": 2767
     },
     {
         "id": "59TN6",
@@ -242,7 +248,8 @@
             "HUMCRLFP",
             "HUMCRLBP"
         ],
-        "img": "images/59TN6.jpg"
+        "img": "images/59TN6.jpg",
+        "price": 1759
     },
     {
         "id": "59TP6",
@@ -272,7 +279,8 @@
             "HUMCRLFP",
             "HUMCRLBP"
         ],
-        "img": "images/59TP6.jpg"
+        "img": "images/59TP6.jpg",
+        "price": 1442
     },
     {
         "id": "58TP0",
@@ -303,7 +311,8 @@
             "HUMCRLFP",
             "HUMCRLBP"
         ],
-        "img": "images/58TP0.jpg"
+        "img": "images/58TP0.jpg",
+        "price": 1437
     },
     {
         "id": "58DLA",
@@ -382,7 +391,8 @@
             "HUMCRLFP",
             "HUMCRLBP"
         ],
-        "img": "images/27VNA3.jpg"
+        "img": "images/27VNA3.jpg",
+        "price": 4080
     },
     {
         "id": "27VNA1",
@@ -404,7 +414,8 @@
             "HUMCRLFP",
             "HUMCRLBP"
         ],
-        "img": "images/27VNA1.jpg"
+        "img": "images/27VNA1.jpg",
+        "price": 6125
     },
     {
         "id": "27TPA8",
@@ -497,7 +508,8 @@
             "50ZH",
             "50NH"
         ],
-        "img": "images/27SCA5.jpg"
+        "img": "images/27SCA5.jpg",
+        "price": 3779
     },
     {
         "id": "37MUHA",
@@ -545,7 +557,8 @@
             "HUMCRLFP",
             "HUMCRLBP"
         ],
-        "img": "images/27VNA0.jpg"
+        "img": "images/27VNA0.jpg",
+        "price": 3657
     },
     {
         "id": "27TPA8***C",
@@ -598,7 +611,8 @@
             "50ZH",
             "50NH"
         ],
-        "img": "images/27SCA5***C.jpg"
+        "img": "images/27SCA5***C.jpg",
+        "price": 3779
     },
     {
         "id": "38MAR",
@@ -618,7 +632,8 @@
             "40MBQ",
             "DHMPHA"
         ],
-        "img": "images/38MAR.jpg"
+        "img": "images/38MAR.jpg",
+        "price": 566
     },
     {
         "id": "38MGR",
@@ -653,7 +668,8 @@
         "compatibleWith": [
             "40MPHA"
         ],
-        "img": "images/38MPRA.jpg"
+        "img": "images/38MPRA.jpg",
+        "price": 1357
     },
     {
         "id": "48NG",
@@ -683,7 +699,8 @@
         "compatibleWith": [
             "TSTATCCEWF-01"
         ],
-        "img": "images/48VR.jpg"
+        "img": "images/48VR.jpg",
+        "price": 430.4
     },
     {
         "id": "50VG",
@@ -769,7 +786,8 @@
             "HUMCRLFP",
             "HUMCRLBP"
         ],
-        "img": "images/FE5B.jpg"
+        "img": "images/FE5B.jpg",
+        "price": 2228
     },
     {
         "id": "FT5",
@@ -798,7 +816,8 @@
             "HUMCRLFP",
             "HUMCRLBP"
         ],
-        "img": "images/FT5.jpg"
+        "img": "images/FT5.jpg",
+        "price": 947
     },
     {
         "id": "FJ5",
@@ -825,7 +844,8 @@
             "HUMCRLFP",
             "HUMCRLBP"
         ],
-        "img": "images/FJ5.jpg"
+        "img": "images/FJ5.jpg",
+        "price": 1352
     },
     {
         "id": "CVAMA",
@@ -847,7 +867,8 @@
             "59TP6",
             "58TP0"
         ],
-        "img": "images/CVAMA.jpg"
+        "img": "images/CVAMA.jpg",
+        "price": 1144
     },
     {
         "id": "CVAVA",
@@ -868,7 +889,8 @@
             "58DLA",
             "58SCA"
         ],
-        "img": "images/CVAVA.jpg"
+        "img": "images/CVAVA.jpg",
+        "price": 532
     },
     {
         "id": "33NM3",
@@ -911,7 +933,8 @@
             "59TN6",
             "FE5B"
         ],
-        "img": "images/SYSTXCCITC01-C.jpg"
+        "img": "images/SYSTXCCITC01-C.jpg",
+        "price": 634.29
     },
     {
         "id": "EB-STATE6ICR-01",
@@ -934,7 +957,8 @@
             "58TP0",
             "FT5"
         ],
-        "img": "images/EB-STATE6ICR-01.jpg"
+        "img": "images/EB-STATE6ICR-01.jpg",
+        "price": 2096
     },
     {
         "id": "TSTATCCEWF-01",
@@ -971,7 +995,8 @@
             "48NL",
             "50NP"
         ],
-        "img": "images/TSTATCCEWF-01.jpg"
+        "img": "images/TSTATCCEWF-01.jpg",
+        "price": 96
     },
     {
         "id": "DGAPA",
@@ -994,7 +1019,8 @@
             "FT5",
             "FJ5"
         ],
-        "img": "images/DGAPA.jpg"
+        "img": "images/DGAPA.jpg",
+        "price": 166.9
     },
     {
         "id": "UVCAP",
@@ -1065,7 +1091,8 @@
             "27SCA5",
             "27SCA5***C"
         ],
-        "img": "images/EZXCAB.jpg"
+        "img": "images/EZXCAB.jpg",
+        "price": 150
     },
     {
         "id": "FNCCAB",
@@ -1103,7 +1130,8 @@
             "27SCA5",
             "27SCA5***C"
         ],
-        "img": "images/FNCCAB.jpg"
+        "img": "images/FNCCAB.jpg",
+        "price": 366
     },
     {
         "id": "HUMCRSTM",
@@ -1141,7 +1169,8 @@
             "27SCA5",
             "27SCA5***C"
         ],
-        "img": "images/HUMCRSTM.jpg"
+        "img": "images/HUMCRSTM.jpg",
+        "price": 1597.5
     },
     {
         "id": "HUMCRLFP",
@@ -1179,7 +1208,8 @@
             "27SCA5",
             "27SCA5***C"
         ],
-        "img": "images/HUMCRLFP.jpg"
+        "img": "images/HUMCRLFP.jpg",
+        "price": 464.6
     },
     {
         "id": "HUMCRLBP",
@@ -1217,6 +1247,7 @@
             "27SCA5",
             "27SCA5***C"
         ],
-        "img": "images/HUMCRLBP.jpg"
+        "img": "images/HUMCRLBP.jpg",
+        "price": 262.6
     }
 ]

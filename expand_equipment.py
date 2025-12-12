@@ -90,6 +90,10 @@ for item in raw_items:
         # Remove hardcoded AHRI ref from template as it won't be valid for all sizes
         if 'ahriRef' in new_item: del new_item['ahriRef'] 
         
+        # Propagate price from the SEED item to the NEW item
+        if 'price' in item and item['price'] is not None:
+             new_item['price'] = item['price']
+        
         expanded_items.append(new_item)
         new_ids.append(new_item['id'])
     
@@ -179,4 +183,6 @@ for item in expanded_items:
     item['compatibleWith'] = list(set(new_compat)) # Remove duplicates
 
 # 4. Output JSON
-print(json.dumps(expanded_items, indent=4))
+with open('expanded_equipment.json', 'w') as f:
+    json.dump(expanded_items, f, indent=4)
+print("Successfully generated expanded_equipment.json")

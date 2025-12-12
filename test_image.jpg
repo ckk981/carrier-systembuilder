@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="/residential/en/us/system/v2509231249/favicon.ico" />
+    <link href="https://www.googletagmanager.com" rel="preconnect">
+    <link href="https://images.carriercms.com" rel="preconnect">
+    <link href="//s7.addthis.com" rel="preconnect">
+            <link href="https://dev.visualwebsiteoptimizer.com" rel="preconnect">
+    <link rel="preload" href="/residential/en/us/system/v2509231249/assets/fonts/MaterialIcons-Regular.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="https://images.carriercms.com/image/upload/v1632407313/carrier/residential-hvac/logos/carrier-turn-to-the-experts-logo.svg" as="image">
+            <link rel="preload" href="https://images.carriercms.com/image/upload/v1632407313/carrier/residential-hvac/logos/carrier-turn-to-the-experts-logo-mb.svg" as="image">
+    
+
+
+<meta name="title" content="Error" />
+<title>Error</title>
+<meta property="og:title" content="Error" />
+<meta name="twitter:title" content="Error" />
+<meta name="keywords" content="" />
+<meta name="description" content="Error" />
+<meta property="og:description" content="Error" />
+<meta name="twitter:description" content="Error" />
+
+
+
+
+                <meta name="googlebots" content="index, follow, noodp" />
+        <meta name="robots" content="index,follow" />
+    <link rel="canonical" href="https://www.carrier.com/residential/en/us/products/air-conditioners/26vna1/images/26vna1-hero.jpg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Carrier" />
+        <meta property="og:image" content="https://images.carriercms.com/image/upload/w_auto,c_scale/v1591909615/carrier/residential-hvac/logos/carrier-experts.png" />
+    <meta property="og:url" content="https://www.carrier.com/residential/en/us/products/air-conditioners/26vna1/images/26vna1-hero.jpg" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="Carrier" />
+    <meta name="twitter:creator" content="Carrier" />
+    <meta name="twitter:image" content="https://images.carriercms.com/image/upload/w_auto,c_scale/v1591909615/carrier/residential-hvac/logos/carrier-experts.png" />
+
+    
+    <link rel="stylesheet" href="/residential/en/us/system/v2509231249/assets/css/app.min.css">
+    <link rel="stylesheet" href="/residential/en/us/system/v2509231249/assets/css/global.min.css" />
+    <link rel="stylesheet" href="/residential/en/us/system/v2509231249/assets/css/style.min.css" />
+
+<script type="text/javascript" src="https://cdn.cookielaw.org/consent/f31059b9-0345-4254-9b5e-679169dfe561/OtAutoBlock.js" ></script> <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="f31059b9-0345-4254-9b5e-679169dfe561" ></script> <script type="text/javascript"> function OptanonWrapper() { if($("#hdn_cookiepolicylink").length) {var cookiePolicyLink = $("#hdn_cookiepolicylink").val();$("#onetrust-consent-sdk #onetrust-banner-sdk #onetrust-policy-text a:first-child").attr("href", cookiePolicyLink);$("#onetrust-pc-sdk #ot-pc-content #ot-pc-desc .privacy-notice-link").attr("href", cookiePolicyLink);}  } </script><link rel="stylesheet" href="/residential/en/us/system/v2509231249/assets/css/fonts.min.css"><script src="/residential/en/us/system/v2509231249/assets/scripts/vwo.min.js"></script><link rel="stylesheet" type="text/css" href="https://assets.sitescdn.net/answers-search-bar/v1.5/answers.css" /><script src="https://assets.sitescdn.net/answers-search-bar/v1.5/answerstemplates.compiled.min.js" defer ></script><script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script><script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script><script>const API_KEY="96922a95fc312d9213c8786fe277fc1b"; const EXPERIENCE_KEY="carrier-search"; const EXPERIENCE_VERSION="PRODUCTION"; const LOCALE="en"; function initAnswers(){ ANSWERS.init({ apiKey: API_KEY, experienceKey: EXPERIENCE_KEY, experienceVersion: EXPERIENCE_VERSION, locale: LOCALE, businessId: "4021113", templateBundle: TemplateBundle.default, onReady: function (){ ANSWERS.addComponent("SearchBar",{ container: ".search-form", name: "search-bar", redirectUrl: "/residential/en/us/search.html", placeholderText: document.getElementById( "search-form-placeholder" ).value, useForm: false, submitIcon: "magnifying_glass",}); ANSWERS.addComponent("SearchBar",{ container: ".search-form-mobile", name: "search-bar-mobile", redirectUrl: "/residential/en/us/search.html", placeholderText: document.getElementById( "search-form-placeholder" ).value, useForm: false, submitIcon: "magnifying_glass",}); var url="https://liveapi-cached.yext.com/v2/accounts/me/answers/autocomplete"; url +="?v=20190101"; url +="&api_key=" + API_KEY; url +="&sessionTrackingEnabled=false"; url +="&experienceKey=" + EXPERIENCE_KEY; url +="&input="; url +="&version=" + EXPERIENCE_VERSION; url +="&locale=" + LOCALE; axios.get(url).then(function (response){ const strings=response.data.response.results.map(function (r){ return r.value;}); var options={ strings: strings, showCursor: true, cursorChar: "|", typeSpeed: 45, backSpeed: 20, smartBackspace: true, loop: true, startDelay: 500, backDelay: 2000, attr: "placeholder",}; var typed=new Typed(".js-yext-query", options);});},});} </script><script src="https://assets.sitescdn.net/answers-search-bar/v1.5/answers.min.js" onload="initAnswers()" defer ></script>    </head>
+<body>
+    <a class="skip-main bg-primary text-white" href="#main-content">Skip to main content</a>
+    <input type='hidden' id='hdn_gaAccount' value="G-CXGRC0T3LN" />
+    <input type='hidden' id='hdn_gtmcontainerid' value="GTM-KNVJTF7C" />
+    <input type='hidden' id='hdn_ooyala_playerID' value="a15b2c6987d84209a6de2702ccb2c3ed" />
+
+        <input type="hidden" id="hdnLocationTitleUrl" value="/residential/en/us/Location/GetLocationTitle" />
+        <input type="hidden" name="locationSelectorUrl" id="locationSelectorUrl" value="/residential/en/us/Json/GetFromCategory/" />
+            <input type='hidden' id='hdn_cookiepolicylink' value="/residential/en/us/legal/cookie-policy/" />
+
+    
+
+<header>
+    <div class="container-fluid fixed-top px-0 ct-header-basic">
+            <div class="ct-header-basic-secondary">
+    <div class="container ">
+        <div class="d-none d-md-block">
+            <nav class="navbar navbar-expand-md navbar-light bg-light" id="navHeader">
+                <div id="navbarNavDropdown2" class="navbar-collapse collapse">
+
+
+<ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="btn" href="/residential/en/us/access-your-thermostat/" target="_self" role="button">
+                    Access My Thermostat
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="btn" href="https://productregistration.carrier.com/" target="_blank" role="button">
+                    Register My Product
+                        <i class="material-icons align-middle">
+                            open_in_new
+                        </i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="btn" href="https://www.carrier.com/carrier/en/worldwide/" target="_blank" role="button">
+                    Carrier Global
+                        <i class="material-icons align-middle">
+                            open_in_new
+                        </i>
+                </a>
+            </li>
+            <li class="nav-item">
+            <button id="btnLocationTitle" class="btn btn-link" role="button" data-toggle="modal" data-target="#selectRegion">
+                <i class="material-icons align-middle">edit_location<span class="sr-only">Select your location</span></i>
+            </button>
+        </li>
+
+</ul>
+
+<input type="hidden" id="search-form-placeholder" value="Search" />
+<form id="searchForm" class="navbar-form navbar-right">
+    <div class="search-form"></div>
+</form>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+
+
+<header class="ct-header-basic-redesign">
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-xl navbar-light">
+                <a href="/residential/en/us/" class="navbar-brand" aria-label="Home">
+
+                        <img class="d-none d-md-inline-block ct-brand-logo"
+                             src="https://images.carriercms.com/image/upload/v1756220291/carrier/residential-hvac/logos/carrier-oval-logo.svg"
+                             alt="carrier-oval-logo"
+                             width="160"
+                             height="100" />
+                        <img class="d-inline-block d-md-none ct-brand-logo"
+                             src="https://images.carriercms.com/image/upload/v1749578489/carrier/residential-hvac/logos/carrier-oval-logo-mb.svg"
+                             alt="carrier-oval-logo-mb"
+                             width="150"
+                             height="70" />
+                </a>
+            <div class="ml-auto">
+                <div class="btn-group">
+                    <button class="navbar-toggler btn-search" type="button" data-toggle="collapse" data-target="#navbarNavDropdown3" aria-controls="navbarNavDropdown3" aria-expanded="false" aria-label="Toggle navigation" title="">
+                        <i class="material-icons open-search">search<span class="sr-only">Search for information</span></i>
+                        <i class="material-icons close-search d-none">close<span class="sr-only">Close Search for information</span></i>
+                    </button>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" title="">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                                <li class="dropdown">
+                                    <a class="nav-link dropdown-toggle"  href="#" aria-label=""   data-icon="keyboard_arrow_down" role="button" data-toggle="dropdown"   >
+                                        Get Started
+                                    </a>
+                                        <div class="dropdown-menu">
+                                            <div class="container">
+                                                <div class="row">
+                                                    
+
+<div class="col-12 col-xl-3 d-xl-inline-flex">
+    <div class="callout">
+        <div class="d-none d-xl-block">
+
+
+
+        <img class="cld-responsive img-fluid" data-src="https://images.carriercms.com/image/upload/w_auto,c_lfill,q_auto,f_auto/v1595521232/carrier/residential-hvac/people/man-lifting-boy-sitting-on-couch.jpg" alt="man-lifting-boy-sitting-on-couch" loading="lazy" />
+
+
+
+
+
+
+                                    <div class="title">Let us help identify your perfect system.</div>
+
+            <p>Tell us about your home and preferences, and get a customized recommendation</p>
+                  </div>
+
+                    <p>
+                        <a href="/residential/en/us/system-builder/home-preferences/" class="text--link" title="Design Your System" aria-label="Design Your System">
+                            Design Your System<i class="material-icons">keyboard_arrow_right</i>
+                        </a>
+                    </p>
+            </div>
+</div>
+
+
+<div class="col-12 col-xl-3 d-xl-inline-flex">
+    <div class="callout">
+        <div class="d-none d-xl-block">
+
+
+
+        <img class="cld-responsive img-fluid" data-src="https://images.carriercms.com/image/upload/w_auto,c_lfill,q_auto,f_auto/v1601347506/carrier/residential-hvac/people/dealer-with-couple-in-the-kitchen-ipad.png" alt="dealer-with-couple-in-the-kitchen-ipad" loading="lazy" />
+
+
+
+
+
+
+                                    <div class="title">Find a local Carrier expert you can trust</div>
+
+            <p>Carrier contractors are ready to help you create your ideal home environment</p>
+                  </div>
+
+                    <p>
+                        <a href="/residential/en/us/find-a-dealer/" class="text--link" title="Find an Expert" aria-label="Find an Expert">
+                            Find an Expert<i class="material-icons">keyboard_arrow_right</i>
+                        </a>
+                    </p>
+            </div>
+</div>
+
+
+<div class="col-12 col-xl-3 d-xl-inline-flex">
+    <div class="callout">
+        <div class="d-none d-xl-block">
+
+
+
+        <img class="cld-responsive img-fluid" data-src="https://images.carriercms.com/image/upload/w_auto,c_lfill,q_auto,f_auto/v1601347518/carrier/residential-hvac/people/carrier-heating-and-cooling-products-3x2.png" alt="carrier-heating-and-cooling-products-3x2" loading="lazy" />
+
+
+
+
+
+
+                                    <div class="title">Explore HVAC Systems & Products</div>
+<p>Learn about our innovative products and how they can help improve your comfort.</p>        </div>
+
+                    <p>
+                        <a href="/residential/en/us/products/" class="text--link" title="Browse Products" aria-label="Browse Products">
+                            Browse Products<i class="material-icons">keyboard_arrow_right</i>
+                        </a>
+                    </p>
+            </div>
+</div>
+
+
+<div class="col-12 col-xl-3 d-xl-inline-flex">
+    <div class="callout">
+        <div class="d-none d-xl-block">
+
+
+
+        <img class="cld-responsive img-fluid" data-src="https://images.carriercms.com/image/upload/w_auto,c_lfill,q_auto,f_auto/v1595521248/carrier/residential-hvac/people/couple-dining-table-laptop.jpg" alt="couple-dining-table-laptop" loading="lazy" />
+
+
+
+
+
+
+                                    <div class="title">Learn Heating & Cooling Basics</div>
+
+            <p>Learn how to choose and maintain your HVAC system</p>
+                  </div>
+
+                    <p>
+                        <a href="/residential/en/us/homeowner-resources/hvac-basics/" class="text--link" title="Explore the Basics" aria-label="Explore the Basics">
+                            Explore the Basics<i class="material-icons">keyboard_arrow_right</i>
+                        </a>
+                    </p>
+            </div>
+</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </li>
+                                <li class="dropdown">
+                                    <a class="nav-link dropdown-toggle"  href="#" aria-label=""   data-icon="keyboard_arrow_down" role="button" data-toggle="dropdown"   >
+                                        Products
+                                    </a>
+                                        <div class="dropdown-menu">
+                                            <div class="container">
+                                                <div class="row">
+
+    <div class="col-12 col-xl-3">
+        <div class="header--wrapper">
+                    <a href="/residential/en/us/products/heating-cooling/" target="_self" title="Heating &amp; Cooling" aria-label="Heating &amp; Cooling">
+                        Heating &amp; Cooling
+                    </a>
+        </div>
+        <ul class="nav flex-column">
+                    <li>
+                        <a href="/residential/en/us/products/air-conditioners/" target="_self" title="Air Conditioners" aria-label="Air Conditioners">
+                            Air Conditioners
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/residential/en/us/products/furnaces/" target="_self" title="Furnaces" aria-label="Furnaces">
+                            Furnaces
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/residential/en/us/products/heat-pumps/" target="_self" title="Heat Pumps" aria-label="Heat Pumps">
+                            Heat Pumps
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/residential/en/us/products/ductless-mini-splits/" target="_self" title="Ductless Systems" aria-label="Ductless Systems">
+                            Ductless Systems
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/residential/en/us/products/heating-cooling/" target="_self" title="See All HVAC Products" aria-label="See All HVAC Products">
+                            See All HVAC Products
+                        </a>
+                    </li>
+        </ul>
+    </div>
+
+
+    <div class="col-12 col-xl-3">
+        <div class="header--wrapper">
+                    <a href="/residential/en/us/products/thermostats/" target="_self" title="Thermostats" aria-label="Thermostats">
+                        Thermostats
+                    </a>
+        </div>
+        <ul class="nav flex-column">
+                    <li>
+                        <a href="/residential/en/us/products/thermostats/smart-thermostats/" target="_self" title="Smart Thermostats" aria-label="Smart Thermostats">
+                            Smart Thermostats
+                        </a>
+                    </li>
+        </ul>
+    </div>
+
+
+    <div class="col-12 col-xl-3">
+        <div class="header--wrapper">
+                    <a href="/residential/en/us/products/indoor-air-quality/" target="_self" title="Healthy Homes" aria-label="Healthy Homes">
+                        Healthy Homes
+                    </a>
+        </div>
+        <ul class="nav flex-column">
+                    <li>
+                        <a href="/residential/en/us/products/indoor-air-quality/air-purifiers/" target="_self" title="Air Purifiers" aria-label="Air Purifiers">
+                            Air Purifiers
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/residential/en/us/products/indoor-air-quality/humidifiers/" target="_self" title="Humidifiers" aria-label="Humidifiers">
+                            Humidifiers
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/residential/en/us/products/indoor-air-quality/dehumidifiers/" target="_self" title="Dehumidifiers" aria-label="Dehumidifiers">
+                            Dehumidifiers
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/residential/en/us/products/indoor-air-quality/ventilators/" target="_self" title="Ventilators" aria-label="Ventilators">
+                            Ventilators
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/residential/en/us/products/indoor-air-quality/" target="_self" title="More Products" aria-label="More Products">
+                            More Products
+                        </a>
+                    </li>
+        </ul>
+    </div>
+
+
+    <div class="col-12 col-xl-3">
+        <div class="header--wrapper">
+                    <a href="/residential/en/us/products/infinity-system/" target="_self" title="Infinity System" aria-label="Infinity System">
+                        Infinity System
+                    </a>
+        </div>
+        <ul class="nav flex-column">
+                    <li>
+                        <a href="/residential/en/us/products/infinity-system/#whatistheinfinitysystem" target="_self" title="What is Infinity" aria-label="What is Infinity">
+                            What is Infinity
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/residential/en/us/products/infinity-system/#infinityadvantages" target="_self" title="Infinity Advantages" aria-label="Infinity Advantages">
+                            Infinity Advantages
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/residential/en/us/products/infinity-system/#infinitywallcontrol" target="_self" title="Infinity Wall Control" aria-label="Infinity Wall Control">
+                            Infinity Wall Control
+                        </a>
+                    </li>
+        </ul>
+    </div>
+
+                                                                                                    </div>
+                                            </div>
+                                        </div>
+                                </li>
+                                <li class="dropdown">
+                                    <a class="nav-link dropdown-toggle"  href="#" aria-label=""   data-icon="keyboard_arrow_down" role="button" data-toggle="dropdown"   >
+                                         Innovation
+                                    </a>
+                                        <div class="dropdown-menu">
+                                            <div class="container">
+                                                <div class="row">
+
+    <div class="col-12 col-xl-3">
+        <div class="header--wrapper">
+                    <a href="/residential/en/us/innovation/" target="_self" title="Innovation for Homeowners" aria-label="Innovation for Homeowners">
+                        Innovation for Homeowners
+                    </a>
+        </div>
+        <ul class="nav flex-column">
+                    <li>
+                        <a href="/residential/en/us/innovation/comfort/" target="_self" title="Comfort Innovations" aria-label="Comfort Innovations">
+                            Comfort Innovations
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/residential/en/us/innovation/smart-thermostats/" target="_self" title="Control Innovations" aria-label="Control Innovations">
+                            Control Innovations
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/residential/en/us/innovation/energy-efficiency/" target="_self" title="Energy Savings Innovations" aria-label="Energy Savings Innovations">
+                            Energy Savings Innovations
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/residential/en/us/products/crossover-solutions/" target="_self" title="Ductless Crossover Solution" aria-label="Ductless Crossover Solution">
+                            Ductless Crossover Solution
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/residential/en/us/innovation/intelisense/" target="_self" title="InteliSense™ Technology" aria-label="InteliSense™ Technology">
+                            InteliSense™ Technology
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/residential/en/us/products/thermostats/smart-thermostats/smartsave/" target="_self" title="SmartSave" aria-label="SmartSave">
+                            SmartSave
+                        </a>
+                    </li>
+        </ul>
+    </div>
+
+
+    <div class="col-12 col-xl-3">
+        <div class="header--wrapper">
+More Innovation for Homeowners        </div>
+        <ul class="nav flex-column">
+                    <li>
+                        <a href="/residential/en/us/products/air-conditioners/what-is-puron-advance/" target="_self" title="Puron Advance™" aria-label="Puron Advance™">
+                            Puron Advance™
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/residential/en/us/products/thermostats/smart-thermostats/hvac-zoning-system/" target="_self" title="Zoning Innovations" aria-label="Zoning Innovations">
+                            Zoning Innovations
+                        </a>
+                    </li>
+        </ul>
+    </div>
+
+                                                    
+
+<div class="col-12 col-xl-6">
+    <div class="row info--panel">
+        <div class="col-12 col-xl-3 offset-xl-1 thumbnail">
+
+
+
+        <img class="cld-responsive img-fluid" data-src="https://images.carriercms.com/image/upload/w_auto,c_lfill,q_auto,f_auto/v1684504900/carrier/residential-hvac/products/air-conditioners/carrier-infinity-ac-thumbnail.png" alt="carrier-infinity-ac-thumbnail" loading="lazy" />
+
+
+
+
+
+
+                    </div>
+            <div class="col-12 col-xl-8 content">
+                        <div class="title">Energy-Saving Technology</div>
+<p>Learn about our energy efficient innovations that can help you save on your heating &amp; cooling energy expenses, while ensuring your home is comfortable.</p>
+                    <p>
+                        <a href="/residential/en/us/innovation/energy-efficiency/" class="text--link" title="Explore Innovations" aria-label="Explore Innovations">
+                            Explore Innovations<i class="material-icons">keyboard_arrow_right</i>
+                        </a>
+                    </p>
+                    </div>
+    </div>
+</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </li>
+                                <li class="dropdown">
+                                    <a class="nav-link dropdown-toggle"  href="#" aria-label=""   data-icon="keyboard_arrow_down" role="button" data-toggle="dropdown"   >
+                                        Why Carrier  
+                                    </a>
+                                        <div class="dropdown-menu">
+                                            <div class="container">
+                                                <div class="row">
+
+    <div class="col-12 col-xl-3">
+        <div class="header--wrapper">
+                    <a href="/residential/en/us/why-carrier/" target="_self" title="Why Carrier" aria-label="Why Carrier">
+                        Why Carrier
+                    </a>
+        </div>
+        <ul class="nav flex-column">
+                    <li>
+                        <a href="/residential/en/us/why-carrier/awards/" target="_self" title="Awards" aria-label="Awards">
+                            Awards
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/residential/en/us/why-carrier/customer-testimonials/" target="_self" title="Customer Testimonials" aria-label="Customer Testimonials">
+                            Customer Testimonials
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/residential/en/us/why-carrier/history-of-innovation/" target="_self" title="History of Innovation" aria-label="History of Innovation">
+                            History of Innovation
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/residential/en/us/why-carrier/designed-in-indianapolis/" target="_self" title="Designed in Indianapolis" aria-label="Designed in Indianapolis">
+                            Designed in Indianapolis
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/residential/en/us/why-carrier/community-involvement/" target="_self" title="Community Involvement" aria-label="Community Involvement">
+                            Community Involvement
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/residential/en/us/why-carrier/sustainability/" target="_self" title="Sustainability" aria-label="Sustainability">
+                            Sustainability
+                        </a>
+                    </li>
+        </ul>
+    </div>
+
+
+    <div class="col-12 col-xl-3">
+        <div class="header--wrapper">
+                    <a href="/residential/en/us/why-carrier/" target="_self" title="Our Dealers" aria-label="Our Dealers">
+                        Our Dealers
+                    </a>
+        </div>
+        <ul class="nav flex-column">
+                    <li>
+                        <a href="/residential/en/us/why-carrier/carrier-authorized-dealers/" target="_self" title="Factory Authorized Dealers" aria-label="Factory Authorized Dealers">
+                            Factory Authorized Dealers
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/residential/en/us/why-carrier/certified-ductless-pro/" target="_self" title="Certified Ductless Pros" aria-label="Certified Ductless Pros">
+                            Certified Ductless Pros
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.thisishvac.com/carrier/" target="_blank" title="HVAC Technician Careers" aria-label="HVAC Technician Careers">
+                            HVAC Technician Careers
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/residential/en/us/why-carrier/become-a-dealer/" target="_self" title="Become a Carrier Dealer" aria-label="Become a Carrier Dealer">
+                            Become a Carrier Dealer
+                        </a>
+                    </li>
+        </ul>
+    </div>
+
+                                                    
+
+<div class="col-12 col-xl-6">
+    <div class="row info--panel">
+        <div class="col-12 col-xl-3 offset-xl-1 thumbnail">
+
+
+
+        <img class="cld-responsive img-fluid" data-src="https://images.carriercms.com/image/upload/w_auto,c_lfill,q_auto,f_auto/v1617311032/carrier/residential-hvac/people/contact-customer-care.png" alt="contact-customer-care" loading="lazy" />
+
+
+
+
+
+
+                    </div>
+            <div class="col-12 col-xl-8 content">
+                        <div class="title">Customer Care</div>
+<p>Can't find what you're looking for? Our customer service representatives are here to help.</p>
+                    <p>
+                        <a href="/residential/en/us/contact-us/" class="text--link" title="Contact Us" aria-label="Contact Us">
+                            Contact Us<i class="material-icons">keyboard_arrow_right</i>
+                        </a>
+                    </p>
+                    </div>
+    </div>
+</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </li>
+                                <li class="dropdown">
+                                    <a class="nav-link dropdown-toggle"  href="#" aria-label=""   data-icon="keyboard_arrow_down" role="button" data-toggle="dropdown"   >
+                                        Resources               
+                                    </a>
+                                        <div class="dropdown-menu">
+                                            <div class="container">
+                                                <div class="row">
+
+    <div class="col-12 col-xl-3">
+        <div class="header--wrapper">
+                    <a href="/residential/en/us/homeowner-resources/" target="_self" title="Homeowner Resources" aria-label="Homeowner Resources">
+                        Homeowner Resources
+                    </a>
+        </div>
+        <ul class="nav flex-column">
+                    <li>
+                        <a href="/residential/en/us/homeowner-resources/faqs/" target="_self" title="FAQs" aria-label="FAQs">
+                            FAQs
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/residential/en/us/homeowner-resources/financing/" target="_self" title="Financing" aria-label="Financing">
+                            Financing
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/residential/en/us/homeowner-resources/hvac-glossary/" target="_self" title="Glossary" aria-label="Glossary">
+                            Glossary
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/residential/en/us/homeowner-resources/hvac-basics/" target="_self" title="Heating and Cooling Basics" aria-label="Heating and Cooling Basics">
+                            Heating and Cooling Basics
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/residential/en/us/homeowner-resources/hvac-parts/" target="_self" title="HVAC Parts" aria-label="HVAC Parts">
+                            HVAC Parts
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/residential/en/us/homeowner-resources/minimum-efficiency-standards/" target="_self" title="Minimum Efficiency Standards" aria-label="Minimum Efficiency Standards">
+                            Minimum Efficiency Standards
+                        </a>
+                    </li>
+        </ul>
+    </div>
+
+
+    <div class="col-12 col-xl-3">
+        <div class="header--wrapper">
+More Resources        </div>
+        <ul class="nav flex-column">
+                    <li>
+                        <a href="/residential/en/us/homeowner-resources/product-literature/" target="_self" title="Product Literature" aria-label="Product Literature">
+                            Product Literature
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/residential/en/us/access-your-thermostat/" target="_self" title="Thermostat Login" aria-label="Thermostat Login">
+                            Thermostat Login
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/residential/en/us/access-your-thermostat/smarthome-app/" target="_self" title="SmartHome App" aria-label="SmartHome App">
+                            SmartHome App
+                        </a>
+                    </li>
+        </ul>
+    </div>
+
+
+    <div class="col-12 col-xl-3">
+        <div class="header--wrapper">
+Savings &amp; Warranty        </div>
+        <ul class="nav flex-column">
+                    <li>
+                        <a href="/residential/en/us/homeowner-resources/energy-savings/" target="_self" title="Energy Savings" aria-label="Energy Savings">
+                            Energy Savings
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/residential/en/us/homeowner-resources/federal-tax-credits/" target="_self" title="Federal Tax Credits" aria-label="Federal Tax Credits">
+                            Federal Tax Credits
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/residential/en/us/homeowner-resources/rebates/" target="_self" title="Rebates" aria-label="Rebates">
+                            Rebates
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://productregistration.carrier.com/Public/Home?brand=carrier" target="_blank" title="Register My Product" aria-label="Register My Product">
+                            Register My Product
+                                <i class="material-icons align-bottom">
+                                    open_in_new
+                                </i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/residential/en/us/homeowner-resources/warranty/" target="_self" title="Warranty" aria-label="Warranty">
+                            Warranty
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/residential/en/us/warranty-lookup/" target="_self" title="Warranty Lookup" aria-label="Warranty Lookup">
+                            Warranty Lookup
+                        </a>
+                    </li>
+        </ul>
+    </div>
+
+                                                                                                    </div>
+                                            </div>
+                                        </div>
+                                </li>
+                </ul>
+                    <div class="header--cta--links">
+                                            <a href="/residential/en/us/find-a-dealer/" class="btn btn-outline-primary btn-lg" aria-label="Find a Local Expert">
+                                                Find a Local Expert
+                                                    <i class="material-icons">keyboard_arrow_right</i>
+                                            </a>
+                                            <a href="/residential/en/us/system-builder/home-preferences/" class="btn btn-outline-primary btn-lg" aria-label="Get System Recommendation">
+                                                Get System Recommendation
+                                                    <i class="material-icons">keyboard_arrow_right</i>
+                                            </a>
+                    </div>
+            </div>
+        </nav>
+    </div>
+    <div class="container">
+        <div id="navbarNavDropdown3" class="collapse navbar-collapse">
+            <div class="row d-block d-xl-none">
+                <div class="col">
+                    <form name="searchFormMobile" id="searchFormMobile" method="get">
+                        <div class="search-form-mobile"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="header--cta--links--mobile"><a class="btn btn-outline-primary btn-lg" aria-label="Find a Local Expert" href="/residential/en/us/find-a-dealer/">Find a Local Expert</a> <a class="btn btn-outline-primary btn-lg" aria-label="Get System Recommendation" href="/residential/en/us/system-builder/home-preferences/">Get System Recommendation</a></div>
+
+
+
+
+    </div>
+</header>
+
+
+
+
+
+
+
+
+<main class="header-static-margin">
+    <section id="main-content" class="pt-one-col">
+    <div class="container-fluid ct-breadcrumb-a">
+        <div class="container">
+
+
+        <nav class="ct_breadcrumb-a d-none d-md-block" aria-label="breadcrumb">
+            <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+
+                    <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+
+                        <span id="breadcrumb(1)" itemprop="name">
+                            <a itemprop="item" href="/residential/en/us/">
+                                Home
+                            </a>
+
+                            <span content="Home" itemprop="name" aria-hidden="true"></span>
+                        </span>
+                        <meta itemprop="position" content="1" />
+                    </li>
+                                            <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+
+                                <span itemprop="name" id="breadcrumb(2)">
+                                    <a itemprop="item" href="/residential/en/us/products/">
+                                        Products
+                                    </a>
+                                    <span content="Products" itemprop="name" aria-hidden="true"></span>
+                                </span>
+                                <meta itemprop="position" content="2" />
+                            </li>
+                            <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+
+                                <span itemprop="name" id="breadcrumb(3)">
+                                    <a itemprop="item" href="/residential/en/us/products/air-conditioners/">
+                                        Air Conditioners
+                                    </a>
+                                    <span content="Air Conditioners" itemprop="name" aria-hidden="true"></span>
+                                </span>
+                                <meta itemprop="position" content="3" />
+                            </li>
+                            <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                <span itemprop="name" id="breadcrumb(4)">Infinity<sup xmlns="http://www.w3.org/1999/xhtml">®</sup> Variable-Speed Central Air Conditioner</span>
+                                <meta itemprop="position" content="4" />
+                            </li>
+            </ol>
+
+        </nav>
+            <nav class="ct_breadcrumb-b d-block d-md-none" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                            <li class="breadcrumb-item active">
+                                <i class="material-icons align-bottom">keyboard_arrow_left<span class="sr-only">Arrow back</span></i>
+                                <a href="/residential/en/us/products/air-conditioners/">
+                                    <span>Air Conditioners</span>
+                                </a>
+                            </li>
+
+
+                </ol>
+            </nav>
+
+
+
+        </div>
+    </div>
+        
+
+
+
+
+
+<article class="container ct-article-basic" id="pagenotfound">
+    <div class="row">
+        <div class="col">
+                <div class="article-title h2">Page Not Found</div>
+                                        <div class="article-body"><div>
+<h4>The webpage you requested cannot be found on the Carrier.com website</h4>
+<h3>Possible causes:</h3>
+<ul>
+<li>There may be an error in the webpage address</li>
+<li>The link you clicked on may be out-of-date</li>
+</ul>
+<h3>Possible solutions:</h3>
+<ul>
+<li>Check the webpage address for errors</li>
+<li>Use the back button to return to the previous page</li>
+<li>Use the navigation links at the top of the page to find the information you require.</li>
+<li>Use the navigation links at the bottom of the page to find the information you require.</li>
+</ul>
+<p>HTTP 404</p>
+</div></div>
+        </div>
+    </div>
+</article>
+
+
+        
+    </section>
+</main>
+
+
+<div id="rb-chat-frame-container">
+	<div id="chatbot_outbox" class="chatbot-outbox">
+		<div id="rb_header" class="rb-header">
+			<img id="img1" src="https://images.carriercms.com/image/upload/v1598971479/carrier/residential-hvac/icons/chat-circle-icon-50x50.png" alt="Chat-icon">
+					<div class="title">Let's chat</div> 
+					<span class="rb-close">-</span>
+					<span id="refresh" class="rb-refresh">
+						<img id="imghome" src="https://7222c-rg-car-mp5-hvc-chatbot-p-p7rpums.azurewebsites.net/Images/icn-home.png" alt="Home-icon">
+					</span>
+		</div>
+		<div class="fixed-height" id="chatbox-container">
+			<iframe name="botname" src="" style="height:100%;width:100%;border: 0;" title="Carrier Chatbot"></iframe>
+		</div>
+	</div>
+</div>
+
+<img id="img2" src="https://images.carriercms.com/image/upload/v1598971479/carrier/residential-hvac/icons/chat-circle-icon-70x70.png" alt="chat-circle-icon">
+
+
+
+
+<section class="container-fluid ct-residential-inactivity-dealer-modal">
+    <div class="container">
+        <div class="row">
+            <div class="modal fade inactive-dealer-modal" tabindex="-1" role="dialog" aria-labelledby="modalDealer" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                                <div class="card-img">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <i class="material-icons align-bottom">close<span class="sr-only">Close this dialog</span></i>
+                                        </button>
+                                    
+
+        <img class="cld-responsive img-fluid" data-src="https://images.carriercms.com/image/upload/w_auto,f_auto,q_auto/v1740516658/carrier/residential-hvac/people/dealer-standing-by-air-conditioner.jpg" alt="a carrier dealer stands by an air conditioner outside" loading="lazy" />
+
+
+
+
+
+
+
+                                </div>   
+                            <div class="card-body text-center">
+                                                                                                    <div class="card-text">
+                                        Can't find what you are looking for? A local Carrier expert can help answer your questions.
+                                    </div>
+                                
+        <a class="btn" href="/residential/en/us/find-a-dealer/" target="_self" aria-label="">
+            Find a Carrier expert in your area.
+        </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>        <div class="footer-region">
+
+<footer class="ct_footer-power-02">
+    <div class="container">
+        <div class="row">
+
+
+
+
+
+
+
+
+
+
+<div class="col-12 col-md-9 col-lg-10">
+<ul class="nav">
+<li><a class="nav-link" title="Homebuilder Information" aria-label="Homebuilder Information" href="/residential/en/us/builder/">Homebuilder Information</a></li>
+<li><a class="nav-link" title="News" aria-label="News" href="/residential/en/us/news/">News</a></li>
+<li><a class="nav-link" target="_blank" title="Careers" href="https://www.corporate.carrier.com/careers/" aria-label="Careers">Careers <em class="material-icons align-middle">open_in_new</em></a></li>
+<li><a class="nav-link" title="Contact us - Page metadata" aria-label="Contact Us" href="/residential/en/us/contact-us/">Contact Us</a></li>
+<li><a class="nav-link" target="_blank" title="Energy Guide" href="https://www.ahridirectory.org/Search/SearchHome?ReturnUrl=%2f" aria-label="Careers">Energy Guide Information Label <em class="material-icons align-middle">open_in_new</em></a></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+            <div class="col-12 col-md-3 col-lg-2 logo">
+              <a href="https://www.corporate.carrier.com/" title="Carrier" aria-label="Carrier Logo">
+                <img class="cld-responsive" data-src="https://images.carriercms.com/image/upload/v1591909545/carrier/residential-hvac/logos/carrier-logo.svg" alt="Carrier" />
+              </a>
+            </div>
+                  </div>
+    </div>
+</footer>
+
+<footer class="ct-deep-footer-basic-01">
+    <div class="container">
+        <div class="row">
+                        <div class="col-lg-5 pb-2 left-col">
+<div class="nav justify-content-lg-start justify-content-center">
+        <div class="social-visit-title">
+            Connect With Us
+        </div>
+    <div itemscope itemtype="http://schema.org/Organization" class="social-icons-visit ct-social-media-lists">
+        <link itemprop="url" href="/" />
+                <a itemprop="sameAs" target="_blank" title="LinkedIn" aria-label="LinkedIn" href="https://www.linkedin.com/company/carrierhvac" id="LinkedIn">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 viewBox="0 0 32 32" version="1.1" role="img" title="LinkedIn" alt="LinkedIn" class="icon-social"
+                                 style="background-color:#0077b5;">
+                                <g>
+                                    <path d="M26 25.963h-4.185v-6.55c0-1.56-.027-3.57-2.175-3.57-2.18 0-2.51 1.7-2.51 3.46v6.66h-4.182V12.495h4.012v1.84h.058c.558-1.058 1.924-2.174 3.96-2.174 4.24 0 5.022 2.79 5.022 6.417v7.386zM8.23 10.655a2.426 2.426 0 0 1 0-4.855 2.427 2.427 0 0 1 0 4.855zm-2.098 1.84h4.19v13.468h-4.19V12.495z" fill-rule="evenodd"></path>
+                                </g>
+                            </svg>
+                </a>
+                <a itemprop="sameAs" target="_blank" title="Twitter" aria-label="Twitter" href="https://twitter.com/CarrierAtHome" id="Twitter">
+                            <svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" class="icon-social" viewBox="0 0 22 20.77" style="width: 22px;height: 20px;">
+                                <g>
+                                    <path d="M.14,20.64L8.66,11.58,0,.01C2.18,.01,4.12-.03,6.05,.04c.34,.02,.73,.48,.99,.81,1.72,2.24,3.41,4.5,5.21,6.88,2.19-2.33,4.33-4.59,6.45-6.85,.63-.66,1.47-.92,2.53-.77L13.07,8.87l8.93,11.9c-2.22,0-4.17,.02-6.13-.03-.27,0-.58-.42-.81-.7-1.84-2.42-3.65-4.84-5.57-7.39-2.35,2.49-4.62,4.91-6.9,7.32-.57,.61-1.39,.82-2.45,.66H.15v.02ZM2.93,1.52c.27,.41,.48,.75,.71,1.07,3.85,5.13,7.72,10.26,11.57,15.39,1.21,1.62,1.78,1.8,3.95,1.24-.22-.32-.42-.62-.65-.92-3.82-5.1-7.74-10.14-11.45-15.32-1.14-1.59-2.38-1.75-4.14-1.45h0Z">
+                                    </path>
+                                </g>
+                            </svg>
+                </a>
+                <a itemprop="sameAs" target="_blank" title="Facebook" aria-label="Facebook" href="https://www.facebook.com/carrierathome" id="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 viewBox="0 0 32 32" version="1.1" role="img" title="Facebook" alt="Facebook" class="icon-social"
+                                 style="background-color:#3b5998;">
+                                <g>
+                                    <path d="M22 5.16c-.406-.054-1.806-.16-3.43-.16-3.4 0-5.733 1.825-5.733 5.17v2.882H9v3.913h3.837V27h4.604V16.965h3.823l.587-3.913h-4.41v-2.5c0-1.123.347-1.903 2.198-1.903H22V5.16z" fill-rule="evenodd"></path>
+                                </g>
+                            </svg>
+                </a>
+                <a itemprop="sameAs" target="_blank" title="Youtube" aria-label="Youtube" href="https://www.youtube.com/channel/UCtKSYiZM4UMSaQ28uWlHWKg" id="Youtube">
+                            <svg version="1.1" viewBox="0 0 300 300" class="icon-social">
+                                <g transform="scale(0.75,0.75)">
+                                    <rect width="400" height="400" style="fill:#ff0000;fill-opacity:1" x="0" y="0" />
+                                    <g transform="matrix(7.8701756,0,0,7.8701756,695.19553,-948.4235)">
+                                        <path style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none" d="M 149.9375 79.222656 C 149.9375 79.222656 86.718651 79.222715 70.851562 83.345703 C 62.355775 85.719505 55.360154 92.715203 52.986328 101.33594 C 48.863375 117.20304 48.863281 150.0625 48.863281 150.0625 C 48.863281 150.0625 48.863375 183.0467 52.986328 198.66406 C 55.360154 207.28468 62.230834 214.15544 70.851562 216.5293 C 86.843592 220.77718 149.9375 220.77734 149.9375 220.77734 C 149.9375 220.77734 213.28168 220.77729 229.14844 216.6543 C 237.76923 214.28049 244.63977 207.53464 246.88867 198.78906 C 251.1366 183.04674 251.13672 150.1875 251.13672 150.1875 C 251.13672 150.1875 251.26156 117.20304 246.88867 101.33594 C 244.63977 92.715203 237.76923 85.844606 229.14844 83.595703 C 213.28168 79.222856 149.9375 79.222656 149.9375 79.222656 z M 129.82227 119.70312 L 182.42188 150.0625 L 129.82227 180.29688 L 129.82227 119.70312 z " transform="matrix(0.16941596,0,0,0.16941596,-88.332912,120.50856)" />
+                                    </g>
+                                </g>
+                            </svg>
+                </a>
+                <a itemprop="sameAs" target="_blank" title="Instagram" aria-label="Instagram" href="https://www.instagram.com/carrier_hvac/" id="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 viewBox="0 0 32 32" version="1.1" role="img" title="Instagram" alt="Instagram" class="icon-social"
+                                 style="background-color: rgb(224, 53, 102);">
+                                <g>
+                                    <path d="M16 5c-2.987 0-3.362.013-4.535.066-1.17.054-1.97.24-2.67.512a5.392 5.392 0 0 0-1.95 1.268 5.392 5.392 0 0 0-1.267 1.95c-.272.698-.458 1.498-.512 2.67C5.013 12.637 5 13.012 5 16s.013 3.362.066 4.535c.054 1.17.24 1.97.512 2.67.28.724.657 1.337 1.268 1.95a5.392 5.392 0 0 0 1.95 1.268c.698.27 1.498.457 2.67.51 1.172.054 1.547.067 4.534.067s3.362-.013 4.535-.066c1.17-.054 1.97-.24 2.67-.51a5.392 5.392 0 0 0 1.95-1.27 5.392 5.392 0 0 0 1.268-1.95c.27-.698.457-1.498.51-2.67.054-1.172.067-1.547.067-4.534s-.013-3.362-.066-4.535c-.054-1.17-.24-1.97-.51-2.67a5.392 5.392 0 0 0-1.27-1.95 5.392 5.392 0 0 0-1.95-1.267c-.698-.272-1.498-.458-2.67-.512C19.363 5.013 18.988 5 16 5zm0 1.982c2.937 0 3.285.01 4.445.064 1.072.05 1.655.228 2.042.38.514.198.88.437 1.265.822.385.385.624.75.823 1.265.15.387.33.97.38 2.042.052 1.16.063 1.508.063 4.445 0 2.937-.01 3.285-.064 4.445-.05 1.072-.228 1.655-.38 2.042-.198.514-.437.88-.822 1.265-.385.385-.75.624-1.265.823-.387.15-.97.33-2.042.38-1.16.052-1.508.063-4.445.063-2.937 0-3.285-.01-4.445-.064-1.072-.05-1.655-.228-2.042-.38-.514-.198-.88-.437-1.265-.822a3.408 3.408 0 0 1-.823-1.265c-.15-.387-.33-.97-.38-2.042-.052-1.16-.063-1.508-.063-4.445 0-2.937.01-3.285.064-4.445.05-1.072.228-1.655.38-2.042.198-.514.437-.88.822-1.265.385-.385.75-.624 1.265-.823.387-.15.97-.33 2.042-.38 1.16-.052 1.508-.063 4.445-.063zm0 12.685a3.667 3.667 0 1 1 0-7.334 3.667 3.667 0 0 1 0 7.334zm0-9.316a5.65 5.65 0 1 0 0 11.3 5.65 5.65 0 0 0 0-11.3zm7.192-.222a1.32 1.32 0 1 1-2.64 0 1.32 1.32 0 0 1 2.64 0" fill-rule="evenodd"></path>
+                                </g>
+                            </svg>
+                </a>
+    </div>
+</div>
+
+
+                        </div>
+                        <div class="col-lg-7 pb-2 right-col">
+
+
+
+
+
+
+
+
+
+
+<div class="row">
+<div class="col-12 p-0">
+<ul class="nav justify-content-lg-end justify-content-center">
+<li class="list-inline-item">©2025 Carrier. All Rights Reserved.</li>
+<li class="list-inline-item"><a title="Accessibility" aria-label="Accessibility" href="/residential/en/us/legal/accessibility/">Accessibility</a></li>
+<li class="list-inline-item"><a class="" title="Privacy Notice" aria-label="Privacy Notice" target="_self" href="/residential/en/us/legal/privacy-notice/">Privacy Notice</a></li>
+<li class="list-inline-item"><a class="" title="Terms of use" aria-label="Terms of use" target="_self" href="/residential/en/us/legal/terms-of-use/">Terms of Use</a></li>
+<li class="list-inline-item"><a class="" title="Speak Up" aria-label="Terms of use" href="https://secure.ethicspoint.com/domain/media/en/gui/69582/index.html" target="_blank">Speak Up</a></li>
+<li class="list-inline-item"><a class="" title="Sitemap" aria-label="Sitemap" target="_self" href="/residential/en/us/sitemap/">Sitemap</a></li>
+<li class="list-inline-item"><a href="#" class="ot-sdk-show-settings">Cookie Settings</a></li>
+</ul>
+</div>
+</div>                        </div>
+        </div>
+    </div>
+</footer>
+
+
+        </div>
+
+    <script src="/residential/en/us/system/v2509231249/assets/scripts/app.min.js"></script>
+    <script type="text/javascript">
+        var cl = cloudinary.Cloudinary.new({ cloud_name: "carrierweb" });
+        cl.responsive();
+    </script>
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KNVJTF7C" title="Google Tag Manager" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+
+<script src="/residential/en/us/system/v2509231249/assets/scripts/dataLayersResidential1.min.js"></script></body>
+</html>
