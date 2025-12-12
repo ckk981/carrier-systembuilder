@@ -39,11 +39,15 @@ jobs:
         run: |
           mkdir -p _site
           # Copy static HTML, JS, JSON files
-          cp *.html _site/ 2>/dev/null || true
-          cp *.js _site/ 2>/dev/null || true
-          cp *.json _site/ 2>/dev/null || true
+          cp *.html _site/ || { echo "No HTML files found"; exit 1; }
+          cp *.js _site/ || echo "No JS files found in root"
+          cp *.json _site/ || echo "No JSON files found"
           # Copy images directory
-          cp -r images _site/ 2>/dev/null || true
+          if [ -d "images" ]; then
+            cp -r images _site/
+          else
+            echo "Warning: images directory not found"
+          fi
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
