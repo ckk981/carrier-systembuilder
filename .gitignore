@@ -121,3 +121,14 @@ local_node/
 
 # Vite
 dist/
+
+# GitHub Pages build directory
+_site/
+
+# Python
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
